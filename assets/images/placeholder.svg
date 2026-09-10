@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24583f"/>
+      <stop offset="100%" stop-color="#163d2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#grad)"/>
+  <circle cx="400" cy="220" r="70" fill="#52b788" opacity="0.2"/>
+  <path d="M400,165 C410,195 445,215 445,240 C445,265 425,285 400,285 C375,285 355,265 355,240 C355,215 390,195 400,165 Z" fill="#52b788"/>
+  <path d="M400,195 L400,270" stroke="#163d2a" stroke-width="3" stroke-linecap="round"/>
+  <path d="M400,225 Q420,220 425,210" stroke="#163d2a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M400,245 Q380,240 375,230" stroke="#163d2a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <text x="400" y="340" font-family="'Outfit', sans-serif" font-size="24" font-weight="600" fill="#e8f5ee" text-anchor="middle" letter-spacing="1.5">AURAPURE HOMEOPATHY</text>
+  <text x="400" y="375" font-family="'Outfit', sans-serif" font-size="15" fill="#d4a373" text-anchor="middle" letter-spacing="2">HOLISTIC WELLNESS &amp; HEALING</text>
+</svg>

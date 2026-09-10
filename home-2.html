@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chronic &amp; Specialized Care | AuraPure Homeopathy Clinic</title>
+  <meta name="description" content="Personalized constitutional homeopathy focusing on chronic condition support, holistic skin health, pediatric care, and long-term vitality without side effects.">
+  <meta name="keywords" content="chronic condition homeopathy, pediatric homeopathy, natural eczema treatment, holistic clinic, homeopathy consultation">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2324583f'/><path d='M50,25 C55,40 70,50 70,65 C70,78 60,88 50,88 C40,88 30,78 30,65 C30,50 45,40 50,25 Z' fill='%2352b788'/></svg>">
+  
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Primary Navigation (Single Unified Navbar) -->
+  <nav class="navbar navbar-expand-lg navbar-clinic">
+    <div class="container-fluid px-3 px-md-4 px-xl-5">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon">
+          <i class="bi bi-flower1"></i>
+        </div>
+        <div>
+          <span>AuraPure</span>
+          <span class="brand-sub">Homeopathy Clinic</span>
+        </div>
+      </a>
+
+      <!-- Mobile Controls -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button type="button" class="control-btn theme-toggle-btn p-2" aria-label="Toggle Light and Dark Mode"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="control-btn rtl-toggle-btn px-2" title="Toggle RTL Direction" aria-label="Toggle RTL Direction"><i class="bi bi-translate"></i> <span class="dir-text fw-bold" style="font-size: 0.76rem;">RTL</span></button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item active" href="home-2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Treatments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doctors.html">Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="testimonials.html">Patient Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pricing.html">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+
+        <!-- Actions: Theme Toggle, RTL Toggle & Appointment CTA -->
+        <div class="navbar-actions mt-3 mt-lg-0">
+          <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle Light and Dark Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL Direction">
+            <i class="bi bi-translate"></i>
+            <span class="dir-text">RTL</span>
+          </button>
+          <a href="contact.html#book-appointment" class="btn-clinic-primary">
+            <i class="bi bi-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Niche Hero Section with Condition Badges & Quick Booking Card -->
+  <section class="hero-wellness" style="background: radial-gradient(circle at top right, var(--bg-surface-secondary) 0%, var(--bg-body) 70%);">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-7">
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge-wellness"><i class="bi bi-check2-circle"></i> Chronic Care Specialist</span>
+            <span class="badge-accent"><i class="bi bi-shield-heart"></i> Pediatric &amp; Skin Focus</span>
+          </div>
+          <h1 class="hero-title">
+            Personalized Homeopathic Care for <span>Chronic &amp; Persistent</span> Conditions
+          </h1>
+          <p class="hero-text">
+            When standard treatments only suppress recurring symptoms, constitutional classical homeopathy investigates your complete genetic, physical, and emotional profile to stimulate genuine systemic recovery.
+          </p>
+          
+          <!-- Condition Quick Filter Pills -->
+          <div class="mb-4">
+            <small class="text-uppercase fw-bold text-muted d-block mb-2" style="letter-spacing: 1px;">Commonly Consulted Conditions:</small>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="service-details.html?service=skin#skin" class="btn btn-sm btn-outline-secondary rounded-pill">Eczema &amp; Psoriasis</a>
+              <a href="service-details.html?service=pediatric#pediatric" class="btn btn-sm btn-outline-secondary rounded-pill">Childhood Recurrent Colds</a>
+              <a href="service-details.html?service=chronic#chronic" class="btn btn-sm btn-outline-secondary rounded-pill">Hashimoto's &amp; Thyroid</a>
+              <a href="service-details.html?service=respiratory#respiratory" class="btn btn-sm btn-outline-secondary rounded-pill">Asthma &amp; Bronchial Allergy</a>
+              <a href="service-details.html?service=stress#stress" class="btn btn-sm btn-outline-secondary rounded-pill">Stress &amp; Insomnia</a>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="contact.html#book-appointment" class="btn-clinic-primary">
+              <i class="bi bi-calendar-plus"></i> Request Specialist Consult
+            </a>
+            <a href="doctors.html" class="btn-clinic-secondary">
+              <i class="bi bi-person-badge"></i> Meet Our Consultants
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Right: Quick Consultation Scheduler Widget -->
+        <div class="col-lg-5">
+          <div class="form-card shadow-lg">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="icon-box mb-0" style="width: 44px; height: 44px; font-size: 1.2rem;">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-0">Direct Consultation</h5>
+                <small class="text-secondary">Confidential 60-min intake</small>
+              </div>
+            </div>
+
+            <form class="appointment-form">
+              <div class="mb-2">
+                <label class="form-label small">Your Full Name</label>
+                <input type="text" name="patient_name" class="form-control form-control-sm" placeholder="e.g. Clara Henderson" required>
+              </div>
+              <div class="row g-2 mb-2">
+                <div class="col-6">
+                  <label class="form-label small">Phone Number</label>
+                  <input type="tel" name="patient_phone" class="form-control form-control-sm" placeholder="+1 (555) 000-0000" required>
+                </div>
+                <div class="col-6">
+                  <label class="form-label small">Email Address</label>
+                  <input type="email" name="patient_email" class="form-control form-control-sm" placeholder="you@email.com" required>
+                </div>
+              </div>
+              <div class="mb-2">
+                <label class="form-label small">Primary Health Concern</label>
+                <select name="treatment_type" class="form-select form-select-sm" required>
+                  <option value="" disabled selected>Select condition category...</option>
+                  <option value="Chronic Conditions">Chronic Condition (Thyroid, Arthritis, Autoimmune)</option>
+                  <option value="Skin Ailments">Skin Health (Eczema, Psoriasis, Acne)</option>
+                  <option value="Pediatric Care">Pediatric Care (Recurrent Infections, Allergies)</option>
+                  <option value="Respiratory Support">Respiratory Support (Asthma, Sinusitis)</option>
+                  <option value="Stress & Wellness">Stress, Anxiety &amp; Sleep Wellness</option>
+                  <option value="Women's Health">Women's Hormonal Health</option>
+                </select>
+              </div>
+              <div class="row g-2 mb-3">
+                <div class="col-6">
+                  <label class="form-label small">Preferred Date</label>
+                  <input type="date" name="appointment_date" class="form-control form-control-sm" required>
+                </div>
+                <div class="col-6">
+                  <label class="form-label small">Preferred Time</label>
+                  <select name="appointment_time" class="form-select form-select-sm" required>
+                    <option value="Morning (09:00 AM - 12:00 PM)">Morning</option>
+                    <option value="Afternoon (01:00 PM - 04:00 PM)">Afternoon</option>
+                    <option value="Evening (04:00 PM - 07:00 PM)">Evening</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="nicheConsent" required checked>
+                <label class="form-check-label small text-secondary" for="nicheConsent">
+                  I agree to <a href="privacy-policy.html" class="text-success text-decoration-underline" target="_blank">privacy policy</a> &amp; <a href="terms-of-care.html" class="text-success text-decoration-underline" target="_blank">consultation terms</a>.
+                </label>
+              </div>
+              <button type="submit" class="btn-clinic-primary w-100 justify-content-center">
+                <i class="bi bi-check-circle"></i> Reserve Consultation Slot
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Niche Pillar 1: Chronic Condition Support -->
+  <section class="py-5 bg-surface">
+    <div class="container py-4">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-6">
+          <span class="section-tag">Niche Focus 01</span>
+          <h2 class="section-title">Constitutional Support for Chronic Conditions</h2>
+          <p class="text-secondary">
+            Chronic ailments rarely exist in isolation. They are external expressions of an internal constitutional dysregulation. Our clinical approach assesses hereditary predispositions (Miasmatic factors), metabolic stress, and environmental triggers.
+          </p>
+          <div class="card-wellness p-3 mb-3">
+            <h6 class="fw-bold text-success mb-1"><i class="bi bi-shield-shaded me-2"></i> Autoimmune &amp; Endocrine Support</h6>
+            <p class="small text-secondary mb-0">Individualized potentized remedies for Hashimoto's thyroiditis, rheumatoid discomfort, and chronic fatigue syndrome.</p>
+          </div>
+          <div class="card-wellness p-3 mb-4">
+            <h6 class="fw-bold text-success mb-1"><i class="bi bi-activity me-2"></i> Non-Suppressive Relapse Prevention</h6>
+            <p class="small text-secondary mb-0">Promoting sustained remission without escalating dosages or organ toxicity.</p>
+          </div>
+          <a href="service-details.html?service=chronic#chronic" class="btn-clinic-secondary">
+            <i class="bi bi-book"></i> Read Chronic Care Case Studies
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-image-wrapper">
+            <img src="assets/images/treatment-chronic-constitutional.jpg" 
+                 onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                 alt="Classical constitutional homeopathic remedies, amber dropper bottles, and pure milk-sugar globules">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Niche Pillar 2: Holistic Dermatology & Skin Health -->
+  <section class="py-5" style="background-color: var(--bg-surface-secondary);">
+    <div class="container py-4">
+      <div class="row align-items-center gy-4 flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <span class="section-tag">Niche Focus 02</span>
+          <h2 class="section-title">Steroid-Free Healing for Persistent Skin Ailments</h2>
+          <p class="text-secondary">
+            In homeopathy, skin eruptions are regarded as the body's peripheral vent for deeper internal imbalances. Applying topical corticosteroids often suppresses eruptions deeper into the respiratory or nervous systems.
+          </p>
+          <ul class="list-unstyled mb-4">
+            <li class="d-flex align-items-center gap-2 mb-2 text-secondary">
+              <i class="bi bi-check-circle-fill text-success"></i> <strong>Atopic Eczema:</strong> Calming intense nocturnal pruritus and restoring barrier lipid vitality.
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2 text-secondary">
+              <i class="bi bi-check-circle-fill text-success"></i> <strong>Psoriasis Management:</strong> Modulating hyperactive cellular turnover from within.
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2 text-secondary">
+              <i class="bi bi-check-circle-fill text-success"></i> <strong>Acne &amp; Urticaria:</strong> Hormonal balance and blood-cleansing constitutional remedies.
+            </li>
+          </ul>
+          <a href="service-details.html?service=skin#skin" class="btn-clinic-primary">
+            <i class="bi bi-flower2"></i> Explore Skin Health Program
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-image-wrapper">
+            <img src="assets/images/treatment-skin-clear-healing.jpg" 
+                 onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                 alt="Holistic dermatology and gentle non-steroidal skin care">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Niche Pillar 3: Gentle Pediatric & Child Care -->
+  <section class="py-5 bg-surface">
+    <div class="container py-4">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-6">
+          <span class="section-tag">Niche Focus 03</span>
+          <h2 class="section-title">Gentle, Non-Traumatic Care for Infants &amp; Children</h2>
+          <p class="text-secondary">
+            Children respond remarkably fast to classical homeopathic treatment because their vital energy is unobstructed by decades of suppressed illness. Our sweet milk-sugar globules make administration pleasant and stress-free.
+          </p>
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <div class="card-wellness p-3 h-100">
+                <i class="bi bi-shield-plus text-success fs-3 mb-2"></i>
+                <h6 class="fw-bold mb-1">Recurrent Tonsillitis &amp; Colds</h6>
+                <p class="small text-secondary mb-0">Strengthening innate lymphatic defenses to break the repeated antibiotic cycle.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card-wellness p-3 h-100">
+                <i class="bi bi-moon-stars text-success fs-3 mb-2"></i>
+                <h6 class="fw-bold mb-1">Infant Colic &amp; Teething</h6>
+                <p class="small text-secondary mb-0">Safe, non-drowsy relief for painful dentition, fretfulness, and colic discomfort.</p>
+              </div>
+            </div>
+          </div>
+          <a href="service-details.html?service=pediatric#pediatric" class="btn-clinic-secondary">
+            <i class="bi bi-arrow-right"></i> View Pediatric Services
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-image-wrapper">
+            <img src="assets/images/treatment-pediatric-immunity.jpg" 
+                 onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                 alt="Gentle homeopathic pediatric consultation with milk-sugar globules">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor Spotlight Section -->
+  <section class="py-5 text-white" style="background: var(--color-primary-gradient);">
+    <div class="container py-4">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-4 text-center">
+          <img src="assets/images/dr-eleanor-vance.jpg" 
+               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&crop=faces&w=400&h=400&q=80'"
+               class="rounded-circle shadow-lg border border-3 border-white-50 mb-3 mx-auto d-block" 
+               style="width: 130px; height: 130px; object-fit: cover; object-position: center 20%;" 
+               alt="Dr. Eleanor Vance">
+          <h4 class="text-white fw-bold mb-1">Dr. Eleanor Vance</h4>
+          <p class="text-white-50 small mb-2">MD (Homeopathy), Senior Constitutional Physician</p>
+          <span class="badge bg-light text-dark rounded-pill px-3 py-1">22+ Years Clinical Practice</span>
+        </div>
+        <div class="col-lg-8">
+          <i class="bi bi-quote fs-1 text-white-50"></i>
+          <p class="fs-5 fst-italic text-white mb-4">
+            "In over two decades of classical practice, I have witnessed that true healing begins when we stop silencing the body's distress signals and instead listen to what they reveal about the constitutional whole."
+          </p>
+          <div class="d-flex flex-wrap gap-4 text-white-50 small mb-4">
+            <div><i class="bi bi-mortarboard-fill text-warning me-1"></i> Royal College of Homeopaths Affiliate</div>
+            <div><i class="bi bi-award-fill text-warning me-1"></i> 14,000+ Cases Documented</div>
+            <div><i class="bi bi-geo-alt-fill text-warning me-1"></i> Chief Medical Officer at AuraPure</div>
+          </div>
+          <a href="contact.html#book-appointment" class="btn-clinic-accent">
+            <i class="bi bi-calendar2-check"></i> Book Consultation with Dr. Vance
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Patient-Centered Case Vignettes -->
+  <section class="py-5 bg-surface">
+    <div class="container py-4">
+      <div class="section-header text-center">
+        <span class="section-tag">Clinical Outcomes</span>
+        <h2 class="section-title">Patient Progress Journeys</h2>
+        <p class="section-subtitle">Real patient feedback illustrating constitutional improvement over measured timelines.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Vignette 1 -->
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="card-wellness h-100 w-100">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge-wellness">Psoriasis Care</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <h6 class="fw-bold mb-2">"Zero flares in 14 months"</h6>
+            <p class="small text-secondary flex-grow-1">
+              "My scalp and elbows had plaque psoriasis for 9 years. After 6 months of constitutional remedies under Dr. Maya Lin, the scaling settled completely to smooth, clear skin."
+            </p>
+            <div class="pt-2 border-top d-flex justify-content-between align-items-center mt-auto">
+              <small class="fw-bold text-primary">Chloe Bennett, 34</small>
+              <small class="text-muted">Treated 9 mos.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vignette 2 -->
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="card-wellness h-100 w-100">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge-wellness">Pediatric Asthma</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <h6 class="fw-bold mb-2">"Active and inhaler-free on playground"</h6>
+            <p class="small text-secondary flex-grow-1">
+              "Our daughter's nighttime coughing attacks were exhausting for the family. Dr. Julian identified her constitutional remedy, and her breathing has been calm throughout winter."
+            </p>
+            <div class="pt-2 border-top d-flex justify-content-between align-items-center mt-auto">
+              <small class="fw-bold text-primary">Parent of Lily, 6</small>
+              <small class="text-muted">Treated 5 mos.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vignette 3 -->
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="card-wellness h-100 w-100">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge-wellness">Hashimoto's Vitality</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <h6 class="fw-bold mb-2">"My mental clarity and stamina returned"</h6>
+            <p class="small text-secondary flex-grow-1">
+              "Brain fog and joint stiffness made daily work exhausting. Working with Dr. Vance brought back my stamina and morning steadiness without any adverse side effects."
+            </p>
+            <div class="pt-2 border-top d-flex justify-content-between align-items-center mt-auto">
+              <small class="fw-bold text-primary">Elena Rostova, 46</small>
+              <small class="text-muted">Treated 10 mos.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment CTA Ribbon -->
+  <section class="py-5" style="background-color: var(--bg-surface-secondary);">
+    <div class="container text-center py-4">
+      <span class="badge-accent mb-2"><i class="bi bi-heart-pulse"></i> Personalized Healing Plan</span>
+      <h2 class="display-6 fw-bold mb-3">Experience Dedicated Homeopathic Care</h2>
+      <p class="lead text-secondary mx-auto mb-4" style="max-width: 600px;">
+        Book your appointment today and take the first step toward lasting vitality.
+      </p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="contact.html#book-appointment" class="btn-clinic-primary">
+          <i class="bi bi-calendar-check"></i> Book Consultation Now
+        </a>
+        <a href="pricing.html" class="btn-clinic-secondary">
+          <i class="bi bi-currency-dollar"></i> View Consultation Plans
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Confirmation Modal (Common to both homepages) -->
+  <div class="modal fade" id="appointmentSuccessModal" tabindex="-1" aria-labelledby="receiptModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title fw-bold" id="receiptModalTitle">
+            <i class="bi bi-check-circle-fill me-2"></i> Consultation Request Confirmed
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="text-center mb-3">
+            <div class="icon-box mx-auto bg-success-subtle text-success mb-2" style="width: 64px; height: 64px; font-size: 2rem;">
+              <i class="bi bi-heart-fill"></i>
+            </div>
+            <h5 class="fw-bold mb-1">Thank You, <span id="receiptName">Patient</span>!</h5>
+            <p class="small text-secondary">Your consultation request has been logged in our clinic diary.</p>
+          </div>
+          <div class="card p-3 bg-body-tertiary border-0 rounded-3">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Treatment:</span>
+              <span class="fw-semibold small" id="receiptTreatment">General Consultation</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Doctor:</span>
+              <span class="fw-semibold small" id="receiptDoctor">Specialist Assigned</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Scheduled Time:</span>
+              <span class="fw-semibold small text-success" id="receiptDate">Date &amp; Time</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="text-muted small">Contact:</span>
+              <span class="fw-semibold small" id="receiptContact">Phone / Email</span>
+            </div>
+          </div>
+          <p class="small text-muted mt-3 mb-0 text-center">
+            Our clinic receptionist will call you within 2 business hours to verify medical intake specifics.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+          <a href="contact.html" class="btn-clinic-primary">View Clinic Directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-clinic">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <div class="col-12 col-md-6 col-lg-4 footer-col footer-col-brand">
+          <div class="footer-brand">
+            <div class="brand-icon">
+              <i class="bi bi-flower1"></i>
+            </div>
+            <span class="font-heading fw-bold fs-4 text-white">AuraPure</span>
+          </div>
+          <p class="small text-muted mb-4">
+            A specialized sanctuary for classical constitutional homeopathy. Restoring equilibrium for chronic conditions, pediatric vitality, and dermatological well-being.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-2 footer-col footer-col-links">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Clinic</a></li>
+            <li><a href="services.html">Therapy Services</a></li>
+            <li><a href="doctors.html">Our Specialists</a></li>
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 footer-col footer-col-treatments">
+          <h5>Specializations</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=chronic#chronic">Chronic Autoimmune</a></li>
+            <li><a href="service-details.html?service=skin#skin">Skin &amp; Dermatology</a></li>
+            <li><a href="service-details.html?service=pediatric#pediatric">Gentle Pediatric Care</a></li>
+            <li><a href="service-details.html?service=digestive#digestive">Asthma &amp; Allergy</a></li>
+            <li><a href="service-details.html?service=stress#stress">Stress &amp; Anxiety</a></li>
+            <li><a href="service-details.html?service=womens#womens">Women's Health</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 footer-col footer-col-info">
+          <h5>Clinic Information</h5>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>142 Greenbrier Wellness Way, Suite 300, Healing Springs, HS 98402</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill"></i>
+              <a href="tel:+18004562872">+1 (800) 456-AURA (2872)</a>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill"></i>
+              <a href="mailto:care@aurapureclinic.com">care@aurapureclinic.com</a>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill"></i>
+              <span>Monday – Friday: 9:00 AM – 7:00 PM</span>
+            </li>
+            <li>
+              <i class="bi bi-calendar-check-fill"></i>
+              <span>Saturday: 9:00 AM – 2:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="mb-0 text-center text-md-start">&copy; 2026 AuraPure Homeopathy Clinic. All Rights Reserved.</p>
+        <div class="d-flex gap-3 align-items-center justify-content-center justify-content-md-end flex-wrap">
+          <a href="terms-of-care.html" class="text-secondary small"><i class="bi bi-file-earmark-text me-1"></i> Documentation</a>
+          <a href="privacy-policy.html" class="text-secondary small">Privacy Policy</a>
+          <a href="terms-of-care.html" class="text-secondary small">Terms of Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" id="backToTopBtn" class="control-btn position-fixed bottom-0 end-0 m-4 p-3 shadow-lg d-none justify-content-center align-items-center rounded-circle" style="width: 46px; height: 46px; z-index: 999;" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

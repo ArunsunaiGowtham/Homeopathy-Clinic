@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holistic Health Blog | AuraPure Homeopathy Clinic</title>
+  <meta name="description" content="Explore evidence-informed articles on classical homeopathy, natural remedies, pediatric wellness, chronic disease relief, and skin health.">
+  <meta name="keywords" content="homeopathy blog, natural healing articles, constitutional homeopathy guide, eczema natural relief, pediatric immunity">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2324583f'/><path d='M50,25 C55,40 70,50 70,65 C70,78 60,88 50,88 C40,88 30,78 30,65 C30,50 45,40 50,25 Z' fill='%2352b788'/></svg>">
+  
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Primary Navigation (Single Unified Navbar) -->
+  <nav class="navbar navbar-expand-lg navbar-clinic">
+    <div class="container-fluid px-3 px-md-4 px-xl-5">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon">
+          <i class="bi bi-flower1"></i>
+        </div>
+        <div>
+          <span>AuraPure</span>
+          <span class="brand-sub">Homeopathy Clinic</span>
+        </div>
+      </a>
+
+      <!-- Mobile Controls -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button type="button" class="control-btn theme-toggle-btn p-2" aria-label="Toggle Light and Dark Mode"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="control-btn rtl-toggle-btn px-2" title="Toggle RTL Direction" aria-label="Toggle RTL Direction"><i class="bi bi-translate"></i> <span class="dir-text fw-bold" style="font-size: 0.76rem;">RTL</span></button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Treatments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doctors.html">Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="testimonials.html">Patient Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pricing.html">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+
+        <!-- Actions: Theme Toggle, RTL Toggle & Appointment CTA -->
+        <div class="navbar-actions mt-3 mt-lg-0">
+          <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle Light and Dark Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL Direction">
+            <i class="bi bi-translate"></i>
+            <span class="dir-text">RTL</span>
+          </button>
+          <a href="contact.html#book-appointment" class="btn-clinic-primary">
+            <i class="bi bi-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Page Hero Banner (Reference Layout) -->
+  <section class="blog-header-banner">
+    <div class="container">
+      <div class="blog-hero-breadcrumb mb-3">
+        <a href="index.html">Home</a>
+        <span class="mx-2 opacity-50">/</span>
+        <span class="active-crumb">Blog</span>
+      </div>
+      <h1 class="blog-hero-title mb-3">Clinical Insights &amp; Holistic Guides</h1>
+      <p class="blog-hero-subtitle mx-auto mb-0">
+        Evidence-based recovery wisdom, constitutional homeopathic medicine, and clinical wellness guidance from our classical specialists.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Blog Content Section (Reference Format: Clean Flush Left Alignment) -->
+  <section class="py-5" style="background-color: var(--bg-surface-secondary);">
+    <div class="container">
+
+      <!-- Category Filter Pills Row (Single Row, Left-Aligned, Matching Reference) -->
+      <div class="blog-filter-bar mb-3">
+        <button type="button" class="blog-cat-pill active" data-category="all">All</button>
+        <button type="button" class="blog-cat-pill" data-category="chronic">Chronic Care</button>
+        <button type="button" class="blog-cat-pill" data-category="skin">Skin Health</button>
+        <button type="button" class="blog-cat-pill" data-category="pediatric">Pediatric Care</button>
+        <button type="button" class="blog-cat-pill" data-category="digestive">Digestive Health</button>
+        <button type="button" class="blog-cat-pill" data-category="respiratory">Respiratory Support</button>
+        <button type="button" class="blog-cat-pill" data-category="women">Women's Health</button>
+        <button type="button" class="blog-cat-pill" data-category="wellness">Holistic Lifestyle</button>
+      </div>
+
+      <!-- Search Input Box Row (Flush Left, Compact Width, Matching Reference) -->
+      <div class="blog-search-wrapper mb-3">
+        <i class="bi bi-search"></i>
+        <input type="text" id="blogSearchInput" class="form-control" placeholder="Search topics or articles..." aria-label="Search articles">
+      </div>
+
+      <!-- Live Article Counter (Flush Left, Matching Reference) -->
+      <div class="blog-counter-text mb-4">
+        Showing <strong id="blogVisibleCount" class="text-success fw-bold fs-6">21</strong> articles
+      </div>
+
+      <!-- No Results State (Hidden by default) -->
+      <div id="noBlogResults" class="text-center py-5 bg-surface rounded-4 border p-4 mb-4" style="display: none;">
+        <div class="icon-box mx-auto mb-3" style="width: 72px; height: 72px; font-size: 2.2rem; background: var(--color-primary-subtle); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+          <i class="bi bi-search"></i>
+        </div>
+        <h4 class="fw-bold mb-2">No articles match your criteria</h4>
+        <p class="text-secondary small mb-3">Try searching for different keywords like "skin", "remedies", "children", or click a category pill above.</p>
+        <button type="button" id="resetBlogBtn" class="btn btn-outline-success rounded-pill px-4 btn-sm">
+          <i class="bi bi-arrow-counterclockwise me-1"></i> Reset Filters
+        </button>
+      </div>
+
+      <!-- Articles Grid: Clean 3-Column Responsive Grid -->
+      <div class="row g-4" id="blogCardsGrid">
+
+        <!-- Article 1 -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Understanding Constitutional Homeopathy How Your Unique Vital Force Guides Healing" 
+             data-category="chronic" 
+             data-author="Dr. Eleanor Vance" 
+             data-keywords="constitutional homeopathy vital force dynamis natrum muriaticum belladonna chronic individualization" 
+             data-excerpt="Why two patients with the same clinical diagnosis receive distinct homeopathic remedies based on mind, body, and individuality.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Chronic Care</span>
+              <a href="blog-details.html?id=1" class="d-block w-100 h-100">
+                <img src="assets/images/header-blog-bg.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Classical homeopathic tinctures and medicines">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Eleanor Vance</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Oct 12, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=1">Understanding Constitutional Homeopathy: How Your Unique Vital Force Guides Healing</a>
+              </h5>
+              <p class="blog-excerpt">
+                Why two patients with the same clinical diagnosis receive distinct homeopathic remedies based on mind, body, and individuality.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 min read</span>
+                <a href="blog-details.html?id=1" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Steroid-Free Relief Reversing Atopic Eczema Through Internal Cellular Purification" 
+             data-category="skin" 
+             data-author="Dr. Maya Lin" 
+             data-keywords="atopic eczema dermatitis topical steroid withdrawal TSW graphites sulphur mezereum sarsaparilla skin flare" 
+             data-excerpt="A clinical look into how suppressing skin eruptions with topical steroids complicates respiratory health, and how homeopathy addresses the root.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Skin Health</span>
+              <a href="blog-details.html?id=2" class="d-block w-100 h-100">
+                <img src="assets/images/header-about-bg.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Natural botanical skincare and soothing chamomile">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Maya Lin</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Oct 08, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=2">Steroid-Free Relief: Reversing Atopic Eczema Through Internal Cellular Purification</a>
+              </h5>
+              <p class="blog-excerpt">
+                A clinical look into how suppressing skin eruptions with topical steroids complicates respiratory health, and how homeopathy addresses the root.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 5 min read</span>
+                <a href="blog-details.html?id=2" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 9 (Skin Health 2) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Overcoming Plaque Psoriasis Restoring Dermal Harmony from Within" 
+             data-category="skin" 
+             data-author="Dr. Chloe Laurent" 
+             data-keywords="plaque psoriasis dermal scaling arsenicum album petroleum sepia graphites autoimmune skin extensor" 
+             data-excerpt="How constitutional remedies like Arsenicum Album and Petroleum calm cellular hyper-proliferation, soothe stubborn scaling, and nourish compromised lipid barriers.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Skin Health</span>
+              <a href="blog-details.html?id=9" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-skin-psoriasis.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Natural homeopathic skin soothing therapy with herbal tinctures">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Chloe Laurent</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Sep 22, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=9">Overcoming Plaque Psoriasis: Restoring Dermal Harmony from Within</a>
+              </h5>
+              <p class="blog-excerpt">
+                How constitutional remedies like Arsenicum Album and Petroleum calm cellular hyper-proliferation, soothe stubborn scaling, and nourish compromised lipid barriers.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 min read</span>
+                <a href="blog-details.html?id=9" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 10 (Skin Health 3) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Hormonal and Adult Acne The Gentle Path to Clear Radiant Skin" 
+             data-category="skin" 
+             data-author="Dr. Marcus Bennett" 
+             data-keywords="hormonal acne adult cystic acne berberis aquifolium hepar sulph silicea liver lymphatic clear skin" 
+             data-excerpt="Targeting systemic liver drainage, lymphatic detoxification, and hormonal balance to permanently eliminate cystic flare-ups without aggressive chemical peeling.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Skin Health</span>
+              <a href="blog-details.html?id=10" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-skin-clear-healing.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Radiant, healthy clear skin and natural botanical remedies">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Marcus Bennett</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Sep 14, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=10">Hormonal &amp; Adult Acne: The Gentle Path to Clear, Radiant Skin</a>
+              </h5>
+              <p class="blog-excerpt">
+                Targeting systemic liver drainage, lymphatic detoxification, and hormonal balance to permanently eliminate cystic flare-ups without aggressive chemical peeling.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 5 min read</span>
+                <a href="blog-details.html?id=10" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Building Juvenile Immunity Safe Homeopathic Solutions for Recurrent Tonsillitis" 
+             data-category="pediatric" 
+             data-author="Dr. Julian Thorne" 
+             data-keywords="juvenile immunity recurrent tonsillitis adenoids baryta carbonica calcarea carbonica pediatric ear throat" 
+             data-excerpt="Breaking the repetitive cycle of antibiotics in early childhood with gentle, pleasant milk-sugar globules that stimulate lymphatic vitality.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Pediatric Care</span>
+              <a href="blog-details.html?id=3" class="d-block w-100 h-100">
+                <img src="assets/images/header-treatments-bg.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Happy healthy child outdoors in nature">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Julian Thorne</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Sep 29, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=3">Building Juvenile Immunity: Safe Homeopathic Solutions for Recurrent Tonsillitis</a>
+              </h5>
+              <p class="blog-excerpt">
+                Breaking the repetitive cycle of antibiotics in early childhood with gentle, pleasant milk-sugar globules that stimulate lymphatic vitality.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 4 min read</span>
+                <a href="blog-details.html?id=3" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 14 (Pediatric Care 2) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Gentle Infant and Toddler Care Soothing Teething Distress Colic and Sleep Disturbances" 
+             data-category="pediatric" 
+             data-author="Dr. Hannah Whitmore" 
+             data-keywords="infant toddler teething distress colic sleep chamomilla colocynthis belladonna baby tears irritability" 
+             data-excerpt="How classical pediatric remedies like Chamomilla and Colocynthis calm agonizing teething pain, abdominal colic, and nighttime restlessness in babies safely.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Pediatric Care</span>
+              <a href="blog-details.html?id=14" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-pediatric-infant.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Mother cradling happy baby with pediatric homeopath offering gentle Chamomilla remedy">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Hannah Whitmore</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Oct 04, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=14">Gentle Infant &amp; Toddler Care: Soothing Teething Distress, Colic &amp; Sleep</a>
+              </h5>
+              <p class="blog-excerpt">
+                How classical remedies calm agonizing teething pain, abdominal colic spasms, and nighttime restlessness in infants safely without sedatives.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 5 min read</span>
+                <a href="blog-details.html?id=14" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 15 (Pediatric Care 3) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Childhood Allergies and Respiratory Resilience Strengthening the Young Vital Force" 
+             data-category="pediatric" 
+             data-author="Dr. Daniel Cavanaugh" 
+             data-keywords="childhood allergies respiratory resilience adenoid hypertrophy calcarea carbonica silicea allium cepa pediatric runny nose" 
+             data-excerpt="Desensitizing hyper-reactive juvenile airways and building lasting resistance against recurrent colds, allergic rhinitis, and enlarged adenoids.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Pediatric Care</span>
+              <a href="blog-details.html?id=15" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-pediatric-immunity.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Smiling schoolboy in pediatric consultation room with doctor, wellness booklet, and Calcarea Carb remedy">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Daniel Cavanaugh</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Oct 10, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=15">Childhood Allergies &amp; Respiratory Resilience: Strengthening the Young Vital Force</a>
+              </h5>
+              <p class="blog-excerpt">
+                Desensitizing hyper-reactive juvenile airways and building lasting resistance against recurrent seasonal allergies, runny noses, and enlarged adenoids.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 5 min read</span>
+                <a href="blog-details.html?id=15" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="The Gut-Brain Axis Relieving IBS and Restoring Deep Sleep Naturally" 
+             data-category="wellness" 
+             data-author="Dr. Arthur Pendelton" 
+             data-keywords="gut brain axis IBS deep sleep nux vomica argentum nitricum passiflora psychosomatic enteric nervous system" 
+             data-excerpt="Discover how emotional tension and psychosomatic triggers disrupt the enteric nervous system, and which remedies restore gut harmony.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Holistic Lifestyle</span>
+              <a href="blog-details.html?id=4" class="d-block w-100 h-100">
+                <img src="assets/images/header-testimonials-bg.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Serene herbal tea and mindful relaxation">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Arthur Pendelton</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Sep 18, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=4">The Gut-Brain Axis: Relieving IBS and Restoring Deep Sleep Naturally</a>
+              </h5>
+              <p class="blog-excerpt">
+                Discover how emotional tension and psychosomatic triggers disrupt the enteric nervous system, and which remedies restore gut harmony.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 7 min read</span>
+                <a href="blog-details.html?id=4" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 20 (Holistic Lifestyle 2) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Circadian Alignment and Restorative Sleep Resetting the Biological Clock with Homeopathy" 
+             data-category="wellness" 
+             data-author="Dr. Liam Gallagher" 
+             data-keywords="circadian alignment restorative sleep insomnia passiflora coffea cruda kali phos cocculus delta wave bedtime" 
+             data-excerpt="How classical remedies like Passiflora and Coffea Cruda calm an overactive evening mind, reset cortisol curves, and restore deep delta-wave sleep naturally.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Holistic Lifestyle</span>
+              <a href="blog-details.html?id=20" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-holistic-sleep.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Cozy bedside wellness setting with herbal tea, Passiflora remedy, and lavender for deep restorative sleep">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Liam Gallagher</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Nov 15, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=20">Circadian Alignment &amp; Restorative Sleep: Resetting the Biological Clock</a>
+              </h5>
+              <p class="blog-excerpt">
+                How classical remedies calm an overactive evening mind, reset cortisol curves, and restore deep delta-wave sleep naturally without dependence.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 min read</span>
+                <a href="blog-details.html?id=20" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 21 (Holistic Lifestyle 3) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Cellular Vitality and Adaptogenic Nutrition The Foundations of Mindful Daily Living" 
+             data-category="wellness" 
+             data-author="Dr. Genevieve Dupont" 
+             data-keywords="cellular vitality adaptogenic nutrition biochemic tissue salts avena sativa kali phosphoricum ferrum phos mag phos" 
+             data-excerpt="Combining biochemic cell salts with whole-food hydration and mindful daily rituals to sustain vibrant energy, mental focus, and physiological vitality.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Holistic Lifestyle</span>
+              <a href="blog-details.html?id=21" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-holistic-vitality.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Sunlit kitchen table with infused fruit water, fresh berries, Avena Sativa and Kali Phos remedies, and daily vitality journal">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Genevieve Dupont</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Nov 22, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=21">Cellular Vitality &amp; Adaptogenic Nutrition: The Foundations of Mindful Daily Living</a>
+              </h5>
+              <p class="blog-excerpt">
+                Combining biochemic cell salts with whole-food hydration and mindful daily rituals to sustain vibrant cellular energy and mental clarity.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 5 min read</span>
+                <a href="blog-details.html?id=21" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 5 -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Natural Defenses Against Seasonal Rhinitis and Bronchial Allergies" 
+             data-category="respiratory" 
+             data-author="Dr. Alistair Sterling" 
+             data-keywords="seasonal rhinitis bronchial allergies pollen allium cepa euphrasia sabadilla arsenicum album hay fever" 
+             data-excerpt="How potentized Allium Cepa, Euphrasia, and Sabadilla desensitize the respiratory tract from pollen hypersensitivity.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Respiratory</span>
+              <a href="blog-details.html?id=5" class="d-block w-100 h-100">
+                <img src="assets/images/header-pricing-bg.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Blowing dandelion seeds in seasonal air">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Alistair Sterling</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Sep 10, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=5">Natural Defenses Against Seasonal Rhinitis and Bronchial Allergies</a>
+              </h5>
+              <p class="blog-excerpt">
+                How potentized Allium Cepa, Euphrasia, and Sabadilla desensitize the respiratory tract from pollen hypersensitivity.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 5 min read</span>
+                <a href="blog-details.html?id=5" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 16 (Respiratory Support 2) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Chronic Asthma and Bronchial Spasms Constitutional Approaches to Deep Lung Vitality" 
+             data-category="respiratory" 
+             data-author="Dr. Robert MacIntyre" 
+             data-keywords="chronic asthma bronchial spasms lung capacity wheezing arsenicum album ipecacuanha natrum sulphuricum blatta orientalis" 
+             data-excerpt="How classical constitutional remedies like Arsenicum Album and Ipecacuanha widen airway diameter, eliminate wheezing, and restore full respiratory stamina naturally.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Respiratory</span>
+              <a href="blog-details.html?id=16" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-respiratory-asthma.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Man breathing freely and deeply in clinical wellness room with homeopathic respiratory remedies">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Robert MacIntyre</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Oct 18, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=16">Chronic Asthma &amp; Bronchial Spasms: Constitutional Approaches to Deep Lung Vitality</a>
+              </h5>
+              <p class="blog-excerpt">
+                How constitutional remedies widen airway diameter, eliminate nocturnal wheezing, and restore effortless breathing naturally.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 min read</span>
+                <a href="blog-details.html?id=16" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 17 (Respiratory Support 3) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Overcoming Chronic Sinusitis and Nasal Polyps Clearing Airways from Within" 
+             data-category="respiratory" 
+             data-author="Dr. Fiona Gallagher" 
+             data-keywords="chronic sinusitis nasal polyps maxillary sinus post nasal drip kali bichromicum pulsatilla silicea teucrium marum" 
+             data-excerpt="Targeted homeopathic protocols to resolve stubborn maxillary congestion, thick mucosal discharge, and chronic sinus pressure without surgery or steroid sprays.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Respiratory</span>
+              <a href="blog-details.html?id=17" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-respiratory-sinus.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Apothecary table with steaming herbal sinus inhalation bowl, Kali Bich and Pulsatilla remedies, and case records">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Fiona Gallagher</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Oct 24, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=17">Overcoming Chronic Sinusitis &amp; Nasal Polyps: Clearing Airways from Within</a>
+              </h5>
+              <p class="blog-excerpt">
+                Targeted protocols to resolve stubborn maxillary congestion, thick mucosal discharges, and facial pressure without steroid sprays.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 5 min read</span>
+                <a href="blog-details.html?id=17" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 6 -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Hormonal Equilibrium Managing PCOS and Menopause Through Classical Care" 
+             data-category="women" 
+             data-author="Dr. Ananya Sharma" 
+             data-keywords="hormonal equilibrium PCOS menopause hot flashes pulsatilla sepia lachesis endocrine cycle ovary" 
+             data-excerpt="A compassionate, non-synthetic approach to regulating endocrine cycles and reducing hot flashes naturally.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Women's Health</span>
+              <a href="blog-details.html?id=6" class="d-block w-100 h-100">
+                <img src="assets/images/header-contact-bg.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Herbal medicine and natural balancing botanicals">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Ananya Sharma</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Aug 28, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=6">Hormonal Equilibrium: Managing PCOS &amp; Menopause Through Classical Care</a>
+              </h5>
+              <p class="blog-excerpt">
+                A compassionate, non-synthetic approach to regulating endocrine cycles and reducing hot flashes naturally.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 min read</span>
+                <a href="blog-details.html?id=6" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 18 (Women's Health 2) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Gentle Homeopathy for Pregnancy and Postpartum Vitality Safe Maternal Care" 
+             data-category="women" 
+             data-author="Dr. Miriam Rosencrantz" 
+             data-keywords="pregnancy postpartum vitality maternal morning sickness nausea sepia ipecacuanha caulophyllum arnica childbirth baby blues" 
+             data-excerpt="Safe, non-toxic constitutional remedies to alleviate persistent morning nausea, pelvic ligament pain, and postpartum emotional exhaustion naturally.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Women's Health</span>
+              <a href="blog-details.html?id=18" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-womens-prenatal.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Pregnant woman in gentle consultation with female obstetric homeopath with Sepia remedy">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Miriam Rosencrantz</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Nov 02, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=18">Gentle Homeopathy for Pregnancy &amp; Postpartum Vitality: Safe Maternal Care</a>
+              </h5>
+              <p class="blog-excerpt">
+                Safe, non-toxic constitutional remedies to alleviate persistent morning nausea, pelvic ligament pain, and postpartum emotional exhaustion.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 min read</span>
+                <a href="blog-details.html?id=18" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 19 (Women's Health 3) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Endometriosis and Pelvic Pain Recovery Natural Endocrine Balance from Within" 
+             data-category="women" 
+             data-author="Dr. Clara Eisenberg" 
+             data-keywords="endometriosis pelvic pain dysmenorrhea lachesis sabina magnesia phosphorica cimicifuga ovarian cramps" 
+             data-excerpt="Resolving pelvic venous congestion, cyclic cramping, and estrogen dominance naturally through constitutional homeopathic therapeutics.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Women's Health</span>
+              <a href="blog-details.html?id=19" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-womens-hormone.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Homeopathic apothecary setup for female endocrine balance with Lachesis and Pulsatilla remedies">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Clara Eisenberg</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Nov 08, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=19">Endometriosis &amp; Pelvic Pain Recovery: Natural Endocrine Balance from Within</a>
+              </h5>
+              <p class="blog-excerpt">
+                Resolving pelvic venous congestion, cyclic cramping, and estrogen dominance naturally through constitutional homeopathic therapeutics.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 min read</span>
+                <a href="blog-details.html?id=19" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 7 -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Restoring Gut Microbiome Balance and Acid Reflux Relief Naturally" 
+             data-category="digestive" 
+             data-author="Dr. Henrik Sorensen" 
+             data-keywords="gut microbiome acid reflux GERD robinia iris versicolor carbo vegetabilis lycopodium heartburn gastritis" 
+             data-excerpt="How constitutional Nux Vomica and Lycopodium regulate gastric motility, heal mucosal inflammation, and eliminate chronic acid reflux without synthetic PPIs.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Digestive Health</span>
+              <a href="blog-details.html?id=7" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-chronic-remedies.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Nutritional and botanical digestive wellness">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Henrik Sorensen</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Aug 15, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=7">Restoring Gut Microbiome Balance &amp; Acid Reflux Relief Naturally</a>
+              </h5>
+              <p class="blog-excerpt">
+                How constitutional Nux Vomica and Lycopodium regulate gastric motility, heal mucosal inflammation, and eliminate chronic acid reflux.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 5 min read</span>
+                <a href="blog-details.html?id=7" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 12 (Digestive Health 2) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Irritable Bowel Syndrome and Gut-Brain Axis Calming Visceral Hypersensitivity" 
+             data-category="digestive" 
+             data-author="Dr. Tobias Lindqvist" 
+             data-keywords="irritable bowel syndrome IBS gut brain visceral hypersensitivity colocynthis magnesia phosphorica argentum nitricum cramping motility" 
+             data-excerpt="How classical constitutional remedies such as Colocynthis and Argentum Nitricum soothe enteric nervous system spasms, relieve cramping, and heal IBS naturally.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Digestive Health</span>
+              <a href="blog-details.html?id=12" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-digestive-ibs.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Woman experiencing peaceful digestive comfort and abdominal relief">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Tobias Lindqvist</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Sep 02, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=12">Irritable Bowel Syndrome &amp; The Gut-Brain Axis: Calming Visceral Hypersensitivity</a>
+              </h5>
+              <p class="blog-excerpt">
+                How constitutional remedies soothe enteric nervous system spasms, relieve severe cramping, and restore calm digestive transit naturally.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 min read</span>
+                <a href="blog-details.html?id=12" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 13 (Digestive Health 3) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Microbiome Restoration and Chronic Bloating The Classical Approach to Gut Dysbiosis" 
+             data-category="digestive" 
+             data-author="Dr. Serena Patel" 
+             data-keywords="microbiome restoration chronic bloating SIBO nux vomica pulsatilla china officinalis carbo vegetabilis dysbiosis gas" 
+             data-excerpt="Re-establishing normal gastric motility, enzymatic balance, and healthy flora to permanently resolve SIBO, fermentation distension, and food intolerances.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Digestive Health</span>
+              <a href="blog-details.html?id=13" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-digestive-microbiome.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Authentic homeopathic dispensary workspace for microbiome restoration and digestive motility">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Serena Patel</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Sep 05, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=13">Microbiome Restoration &amp; Chronic Bloating: The Classical Approach to Gut Dysbiosis</a>
+              </h5>
+              <p class="blog-excerpt">
+                Re-establishing normal gastric motility, enzymatic balance, and healthy flora to resolve SIBO, fermentation distension, and food intolerances.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 min read</span>
+                <a href="blog-details.html?id=13" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 8 -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Managing Autoimmune Thyroiditis and Hashimoto's with Constitutional Potencies" 
+             data-category="chronic" 
+             data-author="Dr. Sarah Jenkins" 
+             data-keywords="autoimmune thyroiditis hashimoto calcarea carbonica graphites thyroidinum iodum anti-TPO antibodies fatigue" 
+             data-excerpt="Clinical methodology for modulating hyperactive auto-antibodies, optimizing thyroxine absorption, and resolving systemic fatigue using individual constitutional simillimum.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Chronic Care</span>
+              <a href="blog-details.html?id=8" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-homeopathy-remedies.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Constitutional homeopathic potencies, dropper bottles and lactose globules">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Sarah Jenkins</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Aug 02, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=8">Managing Autoimmune Thyroiditis (Hashimoto's) with Constitutional Potencies</a>
+              </h5>
+              <p class="blog-excerpt">
+                Clinical methodology for modulating hyperactive auto-antibodies, optimizing energy vitality, and resolving chronic systemic fatigue.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 6 min read</span>
+                <a href="blog-details.html?id=8" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 11 (Chronic Care 3) -->
+        <div class="col-md-6 col-lg-4 blog-item-col" 
+             data-title="Overcoming Chronic Fatigue and Fibromyalgia The Miasmatic Roadmap to Vitality" 
+             data-category="chronic" 
+             data-author="Dr. Evelyn Hartmann" 
+             data-keywords="chronic fatigue fibromyalgia miasmatic cellular vitality carbo vegetabilis phosphoric acid kali phosphoricum arnica exhaustion" 
+             data-excerpt="How classical constitutional homeopathy resolves post-viral exhaustion, cellular mitochondrial stagnation, and widespread fibromyalgia pain without stimulants or dependence.">
+          <div class="blog-card">
+            <div class="blog-img-box">
+              <span class="badge-wellness blog-badge">Chronic Care</span>
+              <a href="blog-details.html?id=11" class="d-block w-100 h-100">
+                <img src="assets/images/treatment-chronic-constitutional.jpg" 
+                     onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                     alt="Classical homeopathic repertory case taking and potentized remedies">
+              </a>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="bi bi-person me-1"></i> Dr. Evelyn Hartmann</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Aug 20, 2026</span>
+              </div>
+              <h5 class="blog-title">
+                <a href="blog-details.html?id=11">Overcoming Chronic Fatigue &amp; Fibromyalgia: The Miasmatic Roadmap to Vitality</a>
+              </h5>
+              <p class="blog-excerpt">
+                How classical constitutional homeopathy resolves post-viral exhaustion, cellular mitochondrial stagnation, and widespread fibromyalgia pain without stimulants or dependence.
+              </p>
+              <div class="blog-footer">
+                <span class="small text-muted"><i class="bi bi-clock me-1"></i> 7 min read</span>
+                <a href="blog-details.html?id=11" class="fw-semibold small text-success">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-clinic">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <div class="col-12 col-md-6 col-lg-4 footer-col footer-col-brand">
+          <div class="footer-brand">
+            <div class="brand-icon">
+              <i class="bi bi-flower1"></i>
+            </div>
+            <span class="font-heading fw-bold fs-4 text-white">AuraPure</span>
+          </div>
+          <p class="small text-muted mb-4">
+            A dedicated sanctuary for classical homeopathy and natural medicine. Guided by Samuel Hahnemann's timeless principles, offering non-toxic healing for all life stages.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-2 footer-col footer-col-links">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Clinic</a></li>
+            <li><a href="services.html">Therapy Services</a></li>
+            <li><a href="doctors.html">Our Specialists</a></li>
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 footer-col footer-col-treatments">
+          <h5>Treatments</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=chronic#chronic">Chronic Conditions</a></li>
+            <li><a href="service-details.html?service=skin#skin">Skin Ailments</a></li>
+            <li><a href="service-details.html?service=pediatric#pediatric">Pediatric Care</a></li>
+            <li><a href="service-details.html?service=digestive#digestive">Digestive Health</a></li>
+            <li><a href="service-details.html?service=respiratory#respiratory">Respiratory Support</a></li>
+            <li><a href="service-details.html?service=stress#stress">Stress &amp; Wellness</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 footer-col footer-col-info">
+          <h5>Clinic Information</h5>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>142 Greenbrier Wellness Way, Suite 300, Healing Springs, HS 98402</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill"></i>
+              <a href="tel:+18004562872">+1 (800) 456-AURA (2872)</a>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill"></i>
+              <a href="mailto:care@aurapureclinic.com">care@aurapureclinic.com</a>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill"></i>
+              <span>Monday – Friday: 9:00 AM – 7:00 PM</span>
+            </li>
+            <li>
+              <i class="bi bi-calendar-check-fill"></i>
+              <span>Saturday: 9:00 AM – 2:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="mb-0 text-center text-md-start">&copy; 2026 AuraPure Homeopathy Clinic. All Rights Reserved.</p>
+        <div class="d-flex gap-3 align-items-center justify-content-center justify-content-md-end flex-wrap">
+          <a href="terms-of-care.html" class="text-secondary small"><i class="bi bi-file-earmark-text me-1"></i> Documentation</a>
+          <a href="privacy-policy.html" class="text-secondary small">Privacy Policy</a>
+          <a href="terms-of-care.html" class="text-secondary small">Terms of Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" id="backToTopBtn" class="control-btn position-fixed bottom-0 end-0 m-4 p-3 shadow-lg d-none justify-content-center align-items-center rounded-circle" style="width: 46px; height: 46px; z-index: 999;" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

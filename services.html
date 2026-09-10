@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treatments &amp; Services | AuraPure Homeopathy Clinic</title>
+  <meta name="description" content="Explore our complete range of specialized classical homeopathic treatments for chronic diseases, skin conditions, pediatric care, digestive health, and emotional well-being.">
+  <meta name="keywords" content="homeopathy treatments, homeopathic services, chronic care, pediatric homeopathy, eczema homeopathy, respiratory relief">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2324583f'/><path d='M50,25 C55,40 70,50 70,65 C70,78 60,88 50,88 C40,88 30,78 30,65 C30,50 45,40 50,25 Z' fill='%2352b788'/></svg>">
+  
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Primary Navigation (Single Unified Navbar) -->
+  <nav class="navbar navbar-expand-lg navbar-clinic">
+    <div class="container-fluid px-3 px-md-4 px-xl-5">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon">
+          <i class="bi bi-flower1"></i>
+        </div>
+        <div>
+          <span>AuraPure</span>
+          <span class="brand-sub">Homeopathy Clinic</span>
+        </div>
+      </a>
+
+      <!-- Mobile Controls -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button type="button" class="control-btn theme-toggle-btn p-2" aria-label="Toggle Light and Dark Mode"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="control-btn rtl-toggle-btn px-2" title="Toggle RTL Direction" aria-label="Toggle RTL Direction"><i class="bi bi-translate"></i> <span class="dir-text fw-bold" style="font-size: 0.76rem;">RTL</span></button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="services.html">Treatments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doctors.html">Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="testimonials.html">Patient Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pricing.html">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+
+        <!-- Actions: Theme Toggle, RTL Toggle & Appointment CTA -->
+        <div class="navbar-actions mt-3 mt-lg-0">
+          <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle Light and Dark Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL Direction">
+            <i class="bi bi-translate"></i>
+            <span class="dir-text">RTL</span>
+          </button>
+          <a href="contact.html#book-appointment" class="btn-clinic-primary">
+            <i class="bi bi-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header page-header-treatments">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Treatments &amp; Services</li>
+        </ol>
+      </nav>
+      <h1 class="display-5 fw-bold mb-2">Our Classical Treatments</h1>
+      <p class="lead mx-auto" style="max-width: 650px;">
+        Evidence-informed, constitutional homeopathic care tailored to your unique biological and emotional vitality.
+      </p>
+    </div>
+  </section>
+
+  <!-- Treatments Grid (8 Mandated Treatments) -->
+  <section class="py-5 bg-surface">
+    <div class="container py-4">
+      <div class="row g-4 align-items-stretch">
+
+        <!-- 1. Chronic Conditions -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-wellness p-0 overflow-hidden">
+            <div class="position-relative" style="height: 220px;">
+              <img src="assets/images/treatment-chronic-new.jpg" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                   class="w-100 h-100 object-fit-cover" alt="Classical homeopathic constitutional remedies, amber dropper bottles, and pure milk-sugar globules">
+              <span class="badge-wellness position-absolute top-0 start-0 m-3 shadow-sm">
+                <i class="bi bi-shield-plus"></i> Constitutional
+              </span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold mb-2">Chronic Conditions</h5>
+              <p class="small text-secondary flex-grow-1">
+                Deep constitutional therapy for arthritis, Hashimoto's thyroiditis, fibromyalgia, hypertension, and long-standing systemic disorders without suppressing vital organs.
+              </p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <a href="service-details.html?service=chronic#chronic" class="btn-clinic-secondary btn-sm py-1 px-3">
+                  <i class="bi bi-info-circle"></i> View Details
+                </a>
+                <a href="contact.html#book-appointment" class="text-success small fw-semibold">
+                  Book Visit <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Skin Ailments -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-wellness p-0 overflow-hidden">
+            <div class="position-relative" style="height: 220px;">
+              <img src="assets/images/treatment-skin-dermatology.jpg" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                   class="w-100 h-100 object-fit-cover" alt="Holistic dermatology, radiant healthy skin, and natural soothing botanical healing">
+              <span class="badge-wellness position-absolute top-0 start-0 m-3 shadow-sm">
+                <i class="bi bi-flower2"></i> Steroid-Free
+              </span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold mb-2">Skin Ailments</h5>
+              <p class="small text-secondary flex-grow-1">
+                Non-steroidal, root-cause healing for atopic eczema, plaque psoriasis, persistent adult acne, chronic urticaria, and alopecia through internal purification.
+              </p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <a href="service-details.html?service=skin#skin" class="btn-clinic-secondary btn-sm py-1 px-3">
+                  <i class="bi bi-info-circle"></i> View Details
+                </a>
+                <a href="contact.html#book-appointment" class="text-success small fw-semibold">
+                  Book Visit <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Pediatric Care -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-wellness p-0 overflow-hidden">
+            <div class="position-relative" style="height: 220px;">
+              <img src="assets/images/treatment-pediatric-care.jpg" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                   class="w-100 h-100 object-fit-cover" alt="Gentle pediatric homeopathic care with sweet milk-sugar globules loved by children">
+              <span class="badge-wellness position-absolute top-0 start-0 m-3 shadow-sm">
+                <i class="bi bi-emoji-smile"></i> Sweet &amp; Gentle
+              </span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold mb-2">Pediatric Care</h5>
+              <p class="small text-secondary flex-grow-1">
+                Pleasant milk-sugar globules that children love. Strengthening natural resistance against recurrent tonsillitis, ear infections, dentition pain, and colic.
+              </p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <a href="service-details.html?service=pediatric#pediatric" class="btn-clinic-secondary btn-sm py-1 px-3">
+                  <i class="bi bi-info-circle"></i> View Details
+                </a>
+                <a href="contact.html#book-appointment" class="text-success small fw-semibold">
+                  Book Visit <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Digestive Health -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-wellness p-0 overflow-hidden">
+            <div class="position-relative" style="height: 220px;">
+              <img src="assets/images/treatment-digestive-health.jpg" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                   class="w-100 h-100 object-fit-cover" alt="Digestive health, gut equilibrium, fresh herbs, and soothing botanical infusion">
+              <span class="badge-wellness position-absolute top-0 start-0 m-3 shadow-sm">
+                <i class="bi bi-cup-hot"></i> Gut Equilibrium
+              </span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold mb-2">Digestive Health</h5>
+              <p class="small text-secondary flex-grow-1">
+                Restoring enteric balance for irritable bowel syndrome (IBS), chronic hyperacidity, GERD, ulcerative colitis, constipation, and food sensitivities.
+              </p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <a href="service-details.html?service=digestive#digestive" class="btn-clinic-secondary btn-sm py-1 px-3">
+                  <i class="bi bi-info-circle"></i> View Details
+                </a>
+                <a href="contact.html#book-appointment" class="text-success small fw-semibold">
+                  Book Visit <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Respiratory Support -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-wellness p-0 overflow-hidden">
+            <div class="position-relative" style="height: 220px;">
+              <img src="assets/images/treatment-respiratory-care.jpg" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                   class="w-100 h-100 object-fit-cover" alt="Respiratory support, free breathing, pine forest air, and homeopathic lung vitality remedies">
+              <span class="badge-wellness position-absolute top-0 start-0 m-3 shadow-sm">
+                <i class="bi bi-wind"></i> Free Breathing
+              </span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold mb-2">Respiratory Support</h5>
+              <p class="small text-secondary flex-grow-1">
+                Targeting allergic rhinitis, chronic sinusitis, bronchial asthma, seasonal pollen allergies, and recurrent chest congestion with desensitizing micro-doses.
+              </p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <a href="service-details.html?service=respiratory#respiratory" class="btn-clinic-secondary btn-sm py-1 px-3">
+                  <i class="bi bi-info-circle"></i> View Details
+                </a>
+                <a href="contact.html#book-appointment" class="text-success small fw-semibold">
+                  Book Visit <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Stress & Wellness -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-wellness p-0 overflow-hidden">
+            <div class="position-relative" style="height: 220px;">
+              <img src="assets/images/treatment-stress-wellness.jpg" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                   class="w-100 h-100 object-fit-cover" alt="Mindful stress relief, serenity, calming botanicals, and nervous system balance">
+              <span class="badge-wellness position-absolute top-0 start-0 m-3 shadow-sm">
+                <i class="bi bi-moon-stars"></i> Serenity
+              </span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold mb-2">Stress &amp; Wellness</h5>
+              <p class="small text-secondary flex-grow-1">
+                Non-habit forming remedies that soothe chronic nervous tension, mental fatigue, burnout, insomnia, panic spikes, and anticipatory anxiety.
+              </p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <a href="service-details.html?service=stress#stress" class="btn-clinic-secondary btn-sm py-1 px-3">
+                  <i class="bi bi-info-circle"></i> View Details
+                </a>
+                <a href="contact.html#book-appointment" class="text-success small fw-semibold">
+                  Book Visit <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Women's Health -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-wellness p-0 overflow-hidden">
+            <div class="position-relative" style="height: 220px;">
+              <img src="assets/images/treatment-womens-health.jpg" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                   class="w-100 h-100 object-fit-cover" alt="Holistic women's hormonal wellness, restorative comfort, and gentle natural health">
+              <span class="badge-wellness position-absolute top-0 start-0 m-3 shadow-sm">
+                <i class="bi bi-gender-female"></i> Hormonal Harmony
+              </span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold mb-2">Women's Health</h5>
+              <p class="small text-secondary flex-grow-1">
+                Holistic hormone regulation for PCOS, irregular or painful menses, menopausal vasomotor flushing, endometriosis comfort, and post-natal rejuvenation.
+              </p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <a href="service-details.html?service=womens#womens" class="btn-clinic-secondary btn-sm py-1 px-3">
+                  <i class="bi bi-info-circle"></i> View Details
+                </a>
+                <a href="contact.html#book-appointment" class="text-success small fw-semibold">
+                  Book Visit <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. General Homeopathic Consultation -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-wellness p-0 overflow-hidden">
+            <div class="position-relative" style="height: 220px;">
+              <img src="assets/images/treatment-consultation.jpg" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'"
+                   class="w-100 h-100 object-fit-cover" alt="Classical homeopathic constitutional consultation with materia medica and personalized care">
+              <span class="badge-wellness position-absolute top-0 start-0 m-3 shadow-sm">
+                <i class="bi bi-person-check"></i> Foundation Care
+              </span>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold mb-2">General Homeopathic Consultation</h5>
+              <p class="small text-secondary flex-grow-1">
+                A thorough 90-minute constitutional appraisal for individuals seeking preventative vitality, optimal stamina, immune resilience, and seasonal lifestyle balance.
+              </p>
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+                <a href="service-details.html?service=general#general" class="btn-clinic-secondary btn-sm py-1 px-3">
+                  <i class="bi bi-info-circle"></i> View Details
+                </a>
+                <a href="contact.html#book-appointment" class="text-success small fw-semibold">
+                  Book Visit <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How Remedies are Prepared & Dispensed -->
+  <section class="py-5" style="background-color: var(--bg-surface-secondary);">
+    <div class="container py-4">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-5">
+          <span class="section-tag">Dispensary Excellence</span>
+          <h2 class="section-title">Pure, Non-Toxic Remedies Prepared In-House</h2>
+          <p class="text-secondary">
+            Every prescription at AuraPure is hand-potentized by certified pharmacists in our sterile laboratory according to official Homeopathic Pharmacopoeia guidelines.
+          </p>
+          <ul class="list-unstyled mb-4">
+            <li class="d-flex align-items-center gap-2 mb-2 text-secondary">
+              <i class="bi bi-check2-circle text-success"></i> Pharmaceutical-grade organic lactose and cane sugar globules.
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2 text-secondary">
+              <i class="bi bi-check2-circle text-success"></i> Mother tinctures sourced from certified biodynamic botanical estates.
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2 text-secondary">
+              <i class="bi bi-check2-circle text-success"></i> Triple-purified amber glass containers protecting medicine vitality.
+            </li>
+          </ul>
+          <a href="pricing.html" class="btn-clinic-secondary">
+            <i class="bi bi-tag"></i> View Consultation &amp; Remedy Packages
+          </a>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="card-wellness p-3 text-center">
+                <h3 class="fw-bold text-success mb-1">3,200+</h3>
+                <small class="text-secondary">Botanical &amp; Mineral Remedies in Stock</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card-wellness p-3 text-center">
+                <h3 class="fw-bold text-success mb-1">100%</h3>
+                <small class="text-secondary">Steroid &amp; Heavy-Metal Free</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card-wellness p-3 text-center">
+                <h3 class="fw-bold text-success mb-1">0</h3>
+                <small class="text-secondary">Toxic Interactions with Allopathic Meds</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card-wellness p-3 text-center">
+                <h3 class="fw-bold text-success mb-1">24/7</h3>
+                <small class="text-secondary">Emergency Dispensary Helpline for Patients</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment CTA -->
+  <section class="py-5 text-white" style="background: var(--color-primary-gradient);">
+    <div class="container text-center py-4">
+      <h2 class="display-6 fw-bold mb-3 text-white">Not Sure Which Treatment Fits Your Needs?</h2>
+      <p class="lead text-white-50 mx-auto mb-4" style="max-width: 600px;">
+        Our clinical team will assess your condition totality during an initial evaluation.
+      </p>
+      <a href="contact.html#book-appointment" class="btn-clinic-accent">
+        <i class="bi bi-calendar-check"></i> Book an Initial Assessment
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-clinic">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <div class="col-12 col-md-6 col-lg-4 footer-col footer-col-brand">
+          <div class="footer-brand">
+            <div class="brand-icon">
+              <i class="bi bi-flower1"></i>
+            </div>
+            <span class="font-heading fw-bold fs-4 text-white">AuraPure</span>
+          </div>
+          <p class="small text-muted mb-4">
+            A dedicated sanctuary for classical homeopathy and natural medicine. Guided by Samuel Hahnemann's timeless principles, offering non-toxic healing for all life stages.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-2 footer-col footer-col-links">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Clinic</a></li>
+            <li><a href="services.html">Therapy Services</a></li>
+            <li><a href="doctors.html">Our Specialists</a></li>
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 footer-col footer-col-treatments">
+          <h5>Treatments</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=chronic#chronic">Chronic Conditions</a></li>
+            <li><a href="service-details.html?service=skin#skin">Skin Ailments</a></li>
+            <li><a href="service-details.html?service=pediatric#pediatric">Pediatric Care</a></li>
+            <li><a href="service-details.html?service=digestive#digestive">Digestive Health</a></li>
+            <li><a href="service-details.html?service=respiratory#respiratory">Respiratory Support</a></li>
+            <li><a href="service-details.html?service=stress#stress">Stress &amp; Wellness</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 footer-col footer-col-info">
+          <h5>Clinic Information</h5>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>142 Greenbrier Wellness Way, Suite 300, Healing Springs, HS 98402</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill"></i>
+              <a href="tel:+18004562872">+1 (800) 456-AURA (2872)</a>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill"></i>
+              <a href="mailto:care@aurapureclinic.com">care@aurapureclinic.com</a>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill"></i>
+              <span>Monday – Friday: 9:00 AM – 7:00 PM</span>
+            </li>
+            <li>
+              <i class="bi bi-calendar-check-fill"></i>
+              <span>Saturday: 9:00 AM – 2:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="mb-0 text-center text-md-start">&copy; 2026 AuraPure Homeopathy Clinic. All Rights Reserved.</p>
+        <div class="d-flex gap-3 align-items-center justify-content-center justify-content-md-end flex-wrap">
+          <a href="terms-of-care.html" class="text-secondary small"><i class="bi bi-file-earmark-text me-1"></i> Documentation</a>
+          <a href="privacy-policy.html" class="text-secondary small">Privacy Policy</a>
+          <a href="terms-of-care.html" class="text-secondary small">Terms of Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" id="backToTopBtn" class="control-btn position-fixed bottom-0 end-0 m-4 p-3 shadow-lg d-none justify-content-center align-items-center rounded-circle" style="width: 46px; height: 46px; z-index: 999;" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

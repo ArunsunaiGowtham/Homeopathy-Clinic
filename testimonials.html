@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Testimonials &amp; Recovery Stories | AuraPure Homeopathy Clinic</title>
+  <meta name="description" content="Read real experiences and reviews from patients who found gentle, long-lasting wellness and renewed vitality through our classical homeopathic care.">
+  <meta name="keywords" content="homeopathy reviews, patient testimonials, homeopathy success stories, natural healing experiences">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2324583f'/><path d='M50,25 C55,40 70,50 70,65 C70,78 60,88 50,88 C40,88 30,78 30,65 C30,50 45,40 50,25 Z' fill='%2352b788'/></svg>">
+  
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Primary Navigation (Single Unified Navbar) -->
+  <nav class="navbar navbar-expand-lg navbar-clinic">
+    <div class="container-fluid px-3 px-md-4 px-xl-5">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon">
+          <i class="bi bi-flower1"></i>
+        </div>
+        <div>
+          <span>AuraPure</span>
+          <span class="brand-sub">Homeopathy Clinic</span>
+        </div>
+      </a>
+
+      <!-- Mobile Controls -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button type="button" class="control-btn theme-toggle-btn p-2" aria-label="Toggle Light and Dark Mode"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="control-btn rtl-toggle-btn px-2" title="Toggle RTL Direction" aria-label="Toggle RTL Direction"><i class="bi bi-translate"></i> <span class="dir-text fw-bold" style="font-size: 0.76rem;">RTL</span></button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Treatments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doctors.html">Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="testimonials.html">Patient Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pricing.html">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+
+        <!-- Actions: Theme Toggle, RTL Toggle & Appointment CTA -->
+        <div class="navbar-actions mt-3 mt-lg-0">
+          <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle Light and Dark Mode">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL Direction">
+            <i class="bi bi-translate"></i>
+            <span class="dir-text">RTL</span>
+          </button>
+          <a href="contact.html#book-appointment" class="btn-clinic-primary">
+            <i class="bi bi-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header page-header-testimonials">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Patient Testimonials</li>
+        </ol>
+      </nav>
+      <h1 class="display-5 fw-bold mb-2">Voices of Healing &amp; Recovery</h1>
+      <p class="lead mx-auto" style="max-width: 650px;">
+        Authentic, unedited reflections from individuals and families who trusted our constitutional care to support their path to balance.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Buttons & Testimonials Grid -->
+  <section class="py-5 bg-surface">
+    <div class="container py-4">
+
+      <!-- Category Filter Pills -->
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+        <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 testimonial-filter-btn active" data-filter="all">
+          All Stories (8)
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 testimonial-filter-btn" data-filter="chronic">
+          Chronic &amp; Joint
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 testimonial-filter-btn" data-filter="skin">
+          Skin Health
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 testimonial-filter-btn" data-filter="pediatric">
+          Pediatric Care
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 testimonial-filter-btn" data-filter="digestive">
+          Digestive Health
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 testimonial-filter-btn" data-filter="respiratory">
+          Respiratory Support
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 testimonial-filter-btn" data-filter="stress">
+          Stress &amp; Wellness
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 testimonial-filter-btn" data-filter="womens">
+          Women's Health
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 testimonial-filter-btn" data-filter="general">
+          General Vitality
+        </button>
+      </div>
+
+      <!-- Testimonials Grid (All 8 Core Treatments) -->
+      <div class="row g-4 align-items-stretch" id="testimonialsContainer">
+
+        <!-- 1. Chronic Conditions -->
+        <div class="col-md-6 col-lg-4 testimonial-item-col" data-category="chronic">
+          <div class="testimonial-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-wellness">Hashimoto's &amp; Joint Relief</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="small text-secondary flex-grow-1">
+              "Despite stable thyroid labs on conventional hormones, I was perpetually exhausted with swollen, painful joints. Dr. Eleanor Vance looked at my entire constitutional totality. My morning stamina and joint mobility have substantially improved."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                   class="patient-avatar" alt="Elena Rostova">
+              <div>
+                <h6 class="mb-0 fw-bold">Elena Rostova</h6>
+                <small class="text-muted">Treated by Dr. Eleanor Vance • 10 mos.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Skin Ailments -->
+        <div class="col-md-6 col-lg-4 testimonial-item-col" data-category="skin">
+          <div class="testimonial-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-wellness">Eczema Recovery</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="small text-secondary flex-grow-1">
+              "I had suffered from relentless eczema on my hands and forearms for four winters. Dr. Maya took a two-hour detailed intake. Her gentle constitutional remedy gradually calmed the burning. I haven't needed corticosteroid ointment for over a year."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                   class="patient-avatar" alt="Sarah Jenkins">
+              <div>
+                <h6 class="mb-0 fw-bold">Sarah Jenkins</h6>
+                <small class="text-muted">Treated by Dr. Maya Lin • 8 mos.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Pediatric Care -->
+        <div class="col-md-6 col-lg-4 testimonial-item-col" data-category="pediatric">
+          <div class="testimonial-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-wellness">Pediatric Immunity</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="small text-secondary flex-grow-1">
+              "My 4-year-old was catching every viral bug at preschool, often resulting in earaches and severe wheezing. Dr. Julian's gentle sweet pills built his resistance quietly. He hasn't missed school once this entire term!"
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                   class="patient-avatar" alt="Thomas Wright">
+              <div>
+                <h6 class="mb-0 fw-bold">Thomas Wright</h6>
+                <small class="text-muted">Parent of Leo (Age 4) • Dr. Julian Thorne</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Digestive Health -->
+        <div class="col-md-6 col-lg-4 testimonial-item-col" data-category="digestive">
+          <div class="testimonial-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-wellness">IBS &amp; Enteric Relief</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="small text-secondary flex-grow-1">
+              "Severe food sensitivities, post-meal bloating, and painful IBS cramping governed my daily routine for years. Dr. Arthur Pendelton's constitutional Nux Vomica and Lycopodium protocol restored regular digestion and peaceful gut comfort."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                   class="patient-avatar" alt="David Miller">
+              <div>
+                <h6 class="mb-0 fw-bold">David Miller</h6>
+                <small class="text-muted">Treated by Dr. Arthur Pendelton • 5 mos.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Respiratory Support -->
+        <div class="col-md-6 col-lg-4 testimonial-item-col" data-category="respiratory">
+          <div class="testimonial-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-wellness">Asthma &amp; Allergy Relief</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="small text-secondary flex-grow-1">
+              "Every spring brought debilitating allergic rhinitis and nighttime chest tightness that relied heavily on bronchodilator inhalers. Dr. Julian Thorne's targeted classical regimen desensitized my respiratory tract, letting me jog outdoors freely."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                   class="patient-avatar" alt="Michael Chang">
+              <div>
+                <h6 class="mb-0 fw-bold">Michael Chang</h6>
+                <small class="text-muted">Treated by Dr. Julian Thorne • 6 mos.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Stress & Wellness -->
+        <div class="col-md-6 col-lg-4 testimonial-item-col" data-category="stress">
+          <div class="testimonial-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-wellness">Burnout &amp; Insomnia Reset</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="small text-secondary flex-grow-1">
+              "Corporate burnout left me trapped in a vicious cycle of racing midnight anxiety and daytime mental exhaustion. Dr. Pendelton prescribed a non-sedative individualized remedy that settled my sympathetic nervous system and restored deep, unbroken sleep."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=120&q=80" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                   class="patient-avatar" alt="Rachel Adams">
+              <div>
+                <h6 class="mb-0 fw-bold">Rachel Adams</h6>
+                <small class="text-muted">Treated by Dr. Arthur Pendelton • 6 mos.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Women's Health -->
+        <div class="col-md-6 col-lg-4 testimonial-item-col" data-category="womens">
+          <div class="testimonial-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-wellness">PCOS &amp; Cycle Balance</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="small text-secondary flex-grow-1">
+              "I struggled with irregular menstrual cycles, pelvic discomfort, and painful hormonal acne for 3 years. Dr. Maya formulated an individual Pulsatilla regimen. My cycle is now predictable every 29 days without any synthetic birth control pills."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                   class="patient-avatar" alt="Anita Patel">
+              <div>
+                <h6 class="mb-0 fw-bold">Anita Patel</h6>
+                <small class="text-muted">Treated by Dr. Maya Lin • 7 mos.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. General Consultation -->
+        <div class="col-md-6 col-lg-4 testimonial-item-col" data-category="general">
+          <div class="testimonial-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-wellness">Constitutional Vitality</span>
+              <div class="star-rating mb-0">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="small text-secondary flex-grow-1">
+              "Approaching my late fifties, chronic fatigue and sluggish immunity were slowing me down. Dr. Eleanor Vance conducted an extraordinary 90-minute constitutional evaluation. Her remedy revitalized my daily stamina and resistance to seasonal illnesses."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" 
+                   onerror="this.onerror=null; this.src='assets/images/placeholder.svg'" 
+                   class="patient-avatar" alt="Robert Sterling">
+              <div>
+                <h6 class="mb-0 fw-bold">Robert Sterling</h6>
+                <small class="text-muted">Treated by Dr. Eleanor Vance • 12 mos.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Ethical Notice Banner -->
+  <section class="py-4" style="background-color: var(--bg-surface-secondary);">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 p-3 bg-body rounded-3 border">
+        <i class="bi bi-info-circle-fill text-success fs-3"></i>
+        <p class="small text-secondary mb-0">
+          <strong>Ethical Medical Notice:</strong> Patient reflections shown here represent individual constitutional responses to classical homeopathic care. In accordance with clinical guidelines, homeopathy stimulates the organism's natural self-regulating vitality; outcomes may vary based on constitutional individuality, chronicity, and overall lifestyle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Strip -->
+  <section class="py-5 text-white" style="background: var(--color-primary-gradient);">
+    <div class="container text-center py-3">
+      <h2 class="display-6 fw-bold mb-3 text-white">Begin Your Personalized Journey Toward Wellness</h2>
+      <p class="lead text-white-50 mx-auto mb-4" style="max-width: 600px;">
+        Join thousands of patients who chose gentle, root-cause healing at AuraPure.
+      </p>
+      <a href="contact.html#book-appointment" class="btn-clinic-accent">
+        <i class="bi bi-calendar-check"></i> Schedule an Appointment
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-clinic">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <div class="col-12 col-md-6 col-lg-4 footer-col footer-col-brand">
+          <div class="footer-brand">
+            <div class="brand-icon">
+              <i class="bi bi-flower1"></i>
+            </div>
+            <span class="font-heading fw-bold fs-4 text-white">AuraPure</span>
+          </div>
+          <p class="small text-muted mb-4">
+            A dedicated sanctuary for classical homeopathy and natural medicine. Guided by Samuel Hahnemann's timeless principles, offering non-toxic healing for all life stages.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="control-btn" title="YouTube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-2 footer-col footer-col-links">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Clinic</a></li>
+            <li><a href="services.html">Therapy Services</a></li>
+            <li><a href="doctors.html">Our Specialists</a></li>
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 footer-col footer-col-treatments">
+          <h5>Treatments</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=chronic#chronic">Chronic Conditions</a></li>
+            <li><a href="service-details.html?service=skin#skin">Skin Ailments</a></li>
+            <li><a href="service-details.html?service=pediatric#pediatric">Pediatric Care</a></li>
+            <li><a href="service-details.html?service=digestive#digestive">Digestive Health</a></li>
+            <li><a href="service-details.html?service=respiratory#respiratory">Respiratory Support</a></li>
+            <li><a href="service-details.html?service=stress#stress">Stress &amp; Wellness</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 footer-col footer-col-info">
+          <h5>Clinic Information</h5>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>142 Greenbrier Wellness Way, Suite 300, Healing Springs, HS 98402</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill"></i>
+              <a href="tel:+18004562872">+1 (800) 456-AURA (2872)</a>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill"></i>
+              <a href="mailto:care@aurapureclinic.com">care@aurapureclinic.com</a>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill"></i>
+              <span>Monday – Friday: 9:00 AM – 7:00 PM</span>
+            </li>
+            <li>
+              <i class="bi bi-calendar-check-fill"></i>
+              <span>Saturday: 9:00 AM – 2:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="mb-0 text-center text-md-start">&copy; 2026 AuraPure Homeopathy Clinic. All Rights Reserved.</p>
+        <div class="d-flex gap-3 align-items-center justify-content-center justify-content-md-end flex-wrap">
+          <a href="terms-of-care.html" class="text-secondary small"><i class="bi bi-file-earmark-text me-1"></i> Documentation</a>
+          <a href="privacy-policy.html" class="text-secondary small">Privacy Policy</a>
+          <a href="terms-of-care.html" class="text-secondary small">Terms of Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" id="backToTopBtn" class="control-btn position-fixed bottom-0 end-0 m-4 p-3 shadow-lg d-none justify-content-center align-items-center rounded-circle" style="width: 46px; height: 46px; z-index: 999;" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
