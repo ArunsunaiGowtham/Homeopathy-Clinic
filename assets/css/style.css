@@ -2572,13 +2572,127 @@ img {
     object-fit: cover;
   }
   .floating-stat-card {
-    position: static;
-    margin-top: 1rem;
-    width: 100%;
-    justify-content: center;
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    margin-top: 0;
+    padding: 0.65rem 0.9rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(225, 237, 228, 0.85);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: var(--shadow-md);
+    z-index: 2;
+  }
+  [data-bs-theme="dark"] .floating-stat-card {
+    background: rgba(16, 32, 24, 0.92);
+    border-color: rgba(31, 59, 44, 0.85);
+  }
+  .floating-stat-card h6 {
+    font-size: 0.85rem;
+  }
+  .floating-stat-card small {
+    font-size: 0.72rem;
+  }
+  .floating-stat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
   }
 }
 
+/* Tablet & Mobile Page Headers, Tables & Footers */
+@media (max-width: 767.98px) {
+  .page-header {
+    padding: 3rem 1rem 2.75rem 1rem !important;
+  }
+  .page-header h1,
+  .page-header .display-5,
+  .page-header .display-6 {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+  .page-header .lead {
+    font-size: 0.98rem !important;
+  }
+  .page-header .breadcrumb {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.95rem;
+  }
+  .blog-header-banner {
+    padding: 2.75rem 1rem 2.5rem 1rem !important;
+  }
+  .blog-hero-title {
+    font-size: 1.85rem !important;
+  }
+  .blog-hero-subtitle {
+    font-size: 0.98rem !important;
+  }
+  .table-responsive {
+    padding: 1rem 0.75rem !important;
+    border-radius: var(--radius-md) !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-responsive table th,
+  .table-responsive table td {
+    padding: 0.65rem 0.65rem !important;
+    font-size: 0.84rem !important;
+    white-space: nowrap;
+  }
+  .table-responsive table th:first-child,
+  .table-responsive table td:first-child {
+    white-space: normal;
+    min-width: 150px;
+  }
+  .footer-clinic {
+    padding-top: 3.5rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .footer-clinic .footer-col {
+    text-align: center;
+  }
+  .footer-clinic .footer-brand {
+    justify-content: center;
+  }
+  .footer-clinic .d-flex.gap-2 {
+    justify-content: center;
+  }
+  .footer-links {
+    padding-left: 0;
+  }
+  .footer-contact-list {
+    padding-left: 0;
+  }
+  .footer-contact-list li {
+    justify-content: center;
+    text-align: center;
+  }
+  .footer-clinic h5::after {
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+  [dir="rtl"] .footer-clinic h5::after {
+    right: 50% !important;
+    transform: translateX(50%);
+  }
+  .footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    text-align: center;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  .footer-bottom .d-flex {
+    justify-content: center !important;
+  }
+}
+
+/* Compact Mobile Screens (< 576px) */
 @media (max-width: 575.98px) {
   .navbar-brand {
     font-size: 1.15rem;
@@ -2621,7 +2735,8 @@ img {
     line-height: 1.35;
     max-width: 100%;
   }
-  .hero-wellness .d-flex.flex-wrap.gap-3 a {
+  .hero-wellness .d-flex.flex-wrap.gap-3 a,
+  .d-flex.flex-wrap.justify-content-center.gap-3 a {
     width: 100%;
     text-align: center;
     justify-content: center;
@@ -2636,6 +2751,16 @@ img {
     border-left: 1px solid var(--border-color) !important;
     padding-left: 0.35rem !important;
   }
+  [dir="rtl"] .hero-stats-row .border-start {
+    border-left: none !important;
+    border-right: 1px solid var(--border-color) !important;
+    padding-left: 0 !important;
+    padding-right: 0.35rem !important;
+  }
+  [dir="rtl"] .step-number {
+    right: auto !important;
+    left: 1.5rem !important;
+  }
   .hero-stats-row h4 {
     font-size: 1.15rem;
   }
@@ -2645,25 +2770,47 @@ img {
     display: block;
   }
   .hero-image-wrapper img {
-    height: 250px;
-  }
-  .topbar {
-    display: none;
+    height: 270px;
   }
   .section-header {
     margin-bottom: 2rem;
   }
   .card-wellness {
-    padding: 1.5rem 1.25rem;
+    padding: 1.35rem 1.15rem;
+  }
+  .pricing-card {
+    padding: 1.75rem 1.15rem;
+  }
+  .step-card {
+    padding: 1.75rem 1.25rem;
+  }
+  .testimonial-card {
+    padding: 1.75rem 1.25rem;
+  }
+  .doctor-img-box {
+    height: 250px;
+  }
+  .doctor-info {
+    padding: 1.25rem 1rem;
+  }
+  .blog-img-box {
+    height: 190px;
+  }
+  .blog-content {
+    padding: 1.25rem 1rem;
+  }
+  .form-control,
+  .form-select {
+    font-size: 1rem !important; /* 16px prevents iOS browser auto-zoom */
+    padding: 0.65rem 0.85rem !important;
+    min-height: 44px;
   }
   .form-card {
-    padding: 1.25rem;
+    padding: 1.25rem 1rem !important;
+    border-radius: var(--radius-md) !important;
   }
-  .footer-bottom {
-    text-align: center;
-  }
-  .footer-bottom .d-flex {
-    justify-content: center !important;
+  .treatment-nav-item {
+    min-height: 44px !important;
   }
 }
 
