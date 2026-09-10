@@ -177,6 +177,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   highlightActiveNavLink();
 
+  // Auto-close mobile navigation when non-dropdown links are clicked
+  const navbarContent = document.getElementById('navbarContent');
+  if (navbarContent && typeof bootstrap !== 'undefined') {
+    const navClickables = navbarContent.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item, .btn-clinic-primary');
+    navClickables.forEach(item => {
+      item.addEventListener('click', function () {
+        if (window.innerWidth < 992 && navbarContent.classList.contains('show')) {
+          const bsCollapse = bootstrap.Collapse.getInstance(navbarContent) || new bootstrap.Collapse(navbarContent, { toggle: false });
+          if (bsCollapse) bsCollapse.hide();
+        }
+      });
+    });
+  }
+
   // ==========================================
   // 4. Working Blog Search & Category Filtering
   // ==========================================
