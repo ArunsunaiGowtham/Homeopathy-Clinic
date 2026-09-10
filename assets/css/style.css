@@ -96,6 +96,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -106,6 +108,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  max-width: 100%;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -2812,6 +2815,49 @@ img {
   .treatment-nav-item {
     min-height: 44px !important;
   }
+  .col-md-7.p-4 {
+    padding: 1.25rem 1rem !important;
+  }
+  .testimonial-filter-btn {
+    font-size: 0.82rem;
+    padding: 0.35rem 0.85rem !important;
+  }
+}
+
+/* Extra-narrow devices (< 420px) */
+@media (max-width: 419.98px) {
+  .form-card .col-6 {
+    width: 100% !important;
+  }
+  .hero-pill-badge {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Testimonial Filter Buttons Base & Dark Mode */
+.testimonial-filter-btn {
+  font-size: 0.86rem;
+  font-weight: 500;
+  transition: var(--transition-base);
+}
+
+.testimonial-filter-btn.active {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .testimonial-filter-btn {
+  border-color: #2d6a4f;
+  color: #74c69d;
+}
+
+[data-bs-theme="dark"] .testimonial-filter-btn:hover,
+[data-bs-theme="dark"] .testimonial-filter-btn.active {
+  background-color: #2d6a4f !important;
+  border-color: #52b788 !important;
+  color: #ffffff !important;
 }
 
 /* ==========================================================================

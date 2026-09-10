@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const matchesCategory = currentBlogCategory === 'all' || category === currentBlogCategory.toLowerCase();
 
       if (matchesSearch && matchesCategory) {
-        card.style.display = 'block';
+        card.style.display = '';
         visibleCount++;
       } else {
         card.style.display = 'none';
@@ -1780,7 +1780,7 @@ document.addEventListener('DOMContentLoaded', function () {
         testimonialItems.forEach(item => {
           const itemCat = item.getAttribute('data-category');
           if (filter === 'all' || itemCat === filter) {
-            item.style.display = 'block';
+            item.style.display = '';
           } else {
             item.style.display = 'none';
           }
