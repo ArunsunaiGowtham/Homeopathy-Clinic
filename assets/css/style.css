@@ -2654,44 +2654,182 @@ img {
   }
   .footer-clinic {
     padding-top: 3.5rem !important;
-    padding-bottom: 2rem !important;
+    padding-bottom: 2.25rem !important;
   }
+
   .footer-clinic .footer-col {
-    text-align: center;
+    text-align: left;
+    margin-bottom: 0.75rem;
   }
+
   .footer-clinic .footer-brand {
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin: 0 0 1rem 0;
+    height: auto;
+    min-height: unset;
   }
+
+  .footer-clinic .footer-col-brand p {
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
   .footer-clinic .d-flex.gap-2 {
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
   }
-  .footer-links {
-    padding-left: 0;
+
+  .footer-clinic h5 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    height: auto;
+    min-height: unset;
+    margin: 0.25rem 0 1.15rem 0;
+    padding: 0;
   }
-  .footer-contact-list {
-    padding-left: 0;
-  }
-  .footer-contact-list li {
-    justify-content: center;
-    text-align: center;
-  }
+
   .footer-clinic h5::after {
-    left: 50% !important;
-    transform: translateX(-50%);
+    display: none !important;
   }
+
   [dir="rtl"] .footer-clinic h5::after {
-    right: 50% !important;
-    transform: translateX(50%);
+    display: none !important;
   }
-  .footer-bottom {
-    margin-top: 2rem;
-    padding-top: 1.25rem;
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .footer-links li {
+    text-align: left;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links a {
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+    color: #c1d5c7;
+  }
+
+  .footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .footer-contact-list li {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-contact-list li i {
+    width: 20px;
+    min-width: 20px;
     text-align: center;
-    flex-direction: column !important;
-    gap: 0.75rem !important;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #52b788;
   }
+
+  .footer-contact-list li span,
+  .footer-contact-list li a {
+    text-align: left;
+    flex: 1;
+    word-break: break-word;
+  }
+
+  /* RTL Support for Mobile Footer */
+  [dir="rtl"] .footer-clinic .footer-col {
+    text-align: right;
+  }
+
+  [dir="rtl"] .footer-clinic .footer-brand {
+    justify-content: flex-start;
+  }
+
+  [dir="rtl"] .footer-clinic .footer-col-brand p {
+    text-align: right;
+  }
+
+  [dir="rtl"] .footer-clinic .d-flex.gap-2 {
+    justify-content: flex-start;
+  }
+
+  [dir="rtl"] .footer-clinic h5 {
+    justify-content: flex-start;
+    text-align: right;
+  }
+
+  [dir="rtl"] .footer-links {
+    padding-right: 0;
+    text-align: right;
+  }
+
+  [dir="rtl"] .footer-links li {
+    text-align: right;
+  }
+
+  [dir="rtl"] .footer-links a {
+    text-align: right;
+  }
+
+  [dir="rtl"] .footer-contact-list {
+    padding-right: 0;
+    text-align: right;
+  }
+
+  [dir="rtl"] .footer-contact-list li {
+    justify-content: flex-start !important;
+    text-align: right !important;
+  }
+
+  [dir="rtl"] .footer-contact-list li span,
+  [dir="rtl"] .footer-contact-list li a {
+    text-align: right;
+  }
+
+  /* Mobile Footer Bottom Bar */
+  .footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.85rem;
+  }
+
+  .footer-bottom p {
+    text-align: center !important;
+    font-size: 0.84rem;
+    margin-bottom: 0;
+  }
+
   .footer-bottom .d-flex {
     justify-content: center !important;
+    flex-wrap: wrap;
+    gap: 1rem !important;
+  }
+
+  .footer-bottom a {
+    font-size: 0.84rem;
   }
 }
 
