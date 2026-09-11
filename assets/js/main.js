@@ -4,7 +4,7 @@
  * Blog Search & Filtering, Appointment Form Validation & Modals, Counters & Countdown.
  */
 
-document.addEventListener('DOMContentLoaded', function () {
+function initAuraPureApp() {
   'use strict';
 
   // ==========================================
@@ -190,6 +190,27 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  // ==========================================
+  // Sticky Navbar Scroll Elevation & State
+  // ==========================================
+  function initStickyNavbar() {
+    const navbar = document.querySelector('.navbar-clinic');
+    if (!navbar) return;
+
+    function handleScroll() {
+      if (window.scrollY > 15) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  initStickyNavbar();
 
   // ==========================================
   // 4. Working Blog Search & Category Filtering
@@ -2617,4 +2638,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   initServiceDetails();
 
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAuraPureApp);
+} else {
+  initAuraPureApp();
+}

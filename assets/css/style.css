@@ -96,7 +96,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 
@@ -107,7 +107,7 @@ body {
   line-height: 1.65;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -250,14 +250,31 @@ img {
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-color-subtle);
   padding: 0.65rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1020;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030 !important;
   transition: var(--transition-base);
+}
+
+.navbar-clinic.navbar-scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0;
 }
 
 [data-bs-theme="dark"] .navbar-clinic {
   background-color: rgba(16, 32, 24, 0.96);
+}
+
+[data-bs-theme="dark"] .navbar-clinic.navbar-scrolled {
+  background-color: rgba(16, 32, 24, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  border-bottom-color: rgba(82, 183, 136, 0.18);
 }
 
 .navbar-brand {
