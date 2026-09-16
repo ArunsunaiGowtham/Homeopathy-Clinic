@@ -1,8 +1,135 @@
 /**
  * AuraPure Homeopathy Clinic - Master Interactive Script
- * Handles: Theme Mode (Light/Dark), RTL Toggle, Active Nav State, 
- * Blog Search & Filtering, Appointment Form Validation & Modals, Counters & Countdown.
+ * Strict Phone Validation & Letter Blocker (Immediate Initialization)
  */
+(function setupImmediatePhoneProtection() {
+  function isPhoneField(el) {
+    if (!el || typeof el.matches !== 'function') return false;
+    return el.matches('input[name="patient_phone"], input[type="tel"], #patientPhone, #home2PatientPhone') ||
+           el.getAttribute('name') === 'patient_phone' ||
+           el.getAttribute('type') === 'tel';
+  }
+
+  function sanitize(val) {
+    return (val || '').replace(/\D/g, '');
+  }
+
+  function isPhoneValid(val) {
+    if (!val || typeof val !== 'string') return false;
+    var trimmed = val.trim();
+    return /^[0-9]{10,15}$/.test(trimmed);
+  }
+
+  // Intercept beforeinput, keydown, input, paste at document level in capture phase
+  document.addEventListener('beforeinput', function (e) {
+    if (isPhoneField(e.target) && e.data) {
+      if (/\D/.test(e.data)) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }
+  }, true);
+
+  document.addEventListener('keydown', function (e) {
+    if (isPhoneField(e.target)) {
+      var allowedKeys = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
+      if (allowedKeys.indexOf(e.key) !== -1 || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (!/^[0-9]$/.test(e.key)) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }
+  }, true);
+
+  document.addEventListener('input', function (e) {
+    if (isPhoneField(e.target)) {
+      var input = e.target;
+      var clean = sanitize(input.value);
+      if (input.value !== clean) {
+        input.value = clean;
+      }
+      var feedback = input.parentElement ? input.parentElement.querySelector('.invalid-feedback') : null;
+      if (input.value.length > 0) {
+        if (!isPhoneValid(input.value)) {
+          input.setCustomValidity('Please enter a valid phone number.');
+          input.classList.add('is-invalid');
+          input.classList.remove('is-valid');
+          if (feedback) feedback.textContent = 'Please enter a valid phone number.';
+        } else {
+          input.setCustomValidity('');
+          input.classList.remove('is-invalid');
+          input.classList.add('is-valid');
+        }
+      } else {
+        input.setCustomValidity('Please enter a valid phone number.');
+        input.classList.remove('is-valid');
+        if (feedback) feedback.textContent = 'Please enter a valid phone number.';
+      }
+    }
+  }, true);
+
+  document.addEventListener('blur', function (e) {
+    if (isPhoneField(e.target)) {
+      var input = e.target;
+      input.value = sanitize(input.value.trim());
+      var feedback = input.parentElement ? input.parentElement.querySelector('.invalid-feedback') : null;
+      if (!isPhoneValid(input.value)) {
+        input.setCustomValidity('Please enter a valid phone number.');
+        input.classList.add('is-invalid');
+        input.classList.remove('is-valid');
+        if (feedback) feedback.textContent = 'Please enter a valid phone number.';
+      } else {
+        input.setCustomValidity('');
+        input.classList.remove('is-invalid');
+        input.classList.add('is-valid');
+      }
+    }
+  }, true);
+
+  document.addEventListener('paste', function (e) {
+    if (isPhoneField(e.target)) {
+      var text = (e.clipboardData || window.clipboardData).getData('text') || '';
+      if (/\D/.test(text)) {
+        e.preventDefault();
+        e.stopPropagation();
+        var clean = sanitize(text);
+        var input = e.target;
+        var start = input.selectionStart || 0;
+        var end = input.selectionEnd || 0;
+        input.value = input.value.slice(0, start) + clean + input.value.slice(end);
+        input.setSelectionRange(start + clean.length, start + clean.length);
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }
+  }, true);
+
+  // Intercept form submit at document capture level
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (form && typeof form.querySelector === 'function') {
+      var phoneInput = form.querySelector('input[name="patient_phone"], input[type="tel"], #patientPhone, #home2PatientPhone');
+      if (phoneInput) {
+        var val = sanitize(phoneInput.value.trim());
+        phoneInput.value = val;
+        var feedback = phoneInput.parentElement ? phoneInput.parentElement.querySelector('.invalid-feedback') : null;
+        if (!isPhoneValid(val)) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          phoneInput.classList.add('is-invalid');
+          phoneInput.classList.remove('is-valid');
+          phoneInput.setCustomValidity('Please enter a valid phone number.');
+          if (feedback) feedback.textContent = 'Please enter a valid phone number.';
+          phoneInput.focus();
+          return false;
+        } else {
+          phoneInput.setCustomValidity('');
+          phoneInput.classList.remove('is-invalid');
+          phoneInput.classList.add('is-valid');
+        }
+      }
+    }
+  }, true);
+})();
 
 function initAuraPureApp() {
   'use strict';
@@ -1801,9 +1928,11 @@ function initAuraPureApp() {
         testimonialItems.forEach(item => {
           const itemCat = item.getAttribute('data-category');
           if (filter === 'all' || itemCat === filter) {
-            item.style.display = '';
+            item.classList.remove('d-none');
+            item.classList.add('d-flex');
           } else {
-            item.style.display = 'none';
+            item.classList.remove('d-flex');
+            item.classList.add('d-none');
           }
         });
       });
@@ -1811,18 +1940,168 @@ function initAuraPureApp() {
   }
 
   // ==========================================
-  // 6. Interactive Appointment Booking Form
+  // 6. Interactive Appointment Booking Form & Strict Phone Validation
   // ==========================================
+  function isValidPhoneNumber(val) {
+    if (!val || typeof val !== 'string') return false;
+    const trimmed = val.trim();
+    return /^[0-9]{10,15}$/.test(trimmed);
+  }
+
+  function isPhoneInputField(el) {
+    if (!el || typeof el.matches !== 'function') return false;
+    return el.matches('input[name="patient_phone"], input[type="tel"], #patientPhone, #home2PatientPhone') ||
+           el.getAttribute('name') === 'patient_phone' ||
+           el.getAttribute('type') === 'tel';
+  }
+
+  // 1. BeforeInput: Modern bulletproof character interceptor (blocks letters before insertion)
+  document.addEventListener('beforeinput', function (e) {
+    if (isPhoneInputField(e.target)) {
+      if (e.data && /\D/.test(e.data)) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }
+  }, true);
+
+  // 2. Keydown: Prevents alphabetic and disallowed keys from being pressed directly
+  document.addEventListener('keydown', function (e) {
+    if (isPhoneInputField(e.target)) {
+      const allowedNavigationKeys = [
+        'Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 
+        'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'
+      ];
+      if (allowedNavigationKeys.includes(e.key) || e.ctrlKey || e.metaKey || e.altKey) {
+        return;
+      }
+      if (!/^[0-9]$/.test(e.key)) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }
+  }, true);
+
+  // 3. Input: Real-time sanitization and dynamic validity feedback
+  document.addEventListener('input', function (e) {
+    if (isPhoneInputField(e.target)) {
+      const input = e.target;
+      const original = input.value;
+      const sanitized = original.replace(/\D/g, '');
+      if (original !== sanitized) {
+        input.value = sanitized;
+      }
+
+      const feedbackEl = input.parentElement ? input.parentElement.querySelector('.invalid-feedback') : null;
+      const val = input.value.trim();
+      if (val.length > 0) {
+        if (!isValidPhoneNumber(val)) {
+          input.setCustomValidity("Please enter a valid phone number.");
+          input.classList.add('is-invalid');
+          input.classList.remove('is-valid');
+          if (feedbackEl) feedbackEl.textContent = "Please enter a valid phone number.";
+        } else {
+          input.setCustomValidity("");
+          input.classList.remove('is-invalid');
+          input.classList.add('is-valid');
+        }
+      } else {
+        input.setCustomValidity("Please enter a valid phone number.");
+        input.classList.remove('is-valid');
+        if (feedbackEl) feedbackEl.textContent = "Please enter a valid phone number.";
+      }
+    }
+  }, true);
+
+  // 4. Paste: Sanitize clipboard text immediately upon paste
+  document.addEventListener('paste', function (e) {
+    if (isPhoneInputField(e.target)) {
+      const input = e.target;
+      const clipboardData = e.clipboardData || window.clipboardData;
+      if (clipboardData) {
+        const text = clipboardData.getData('text') || '';
+        if (/\D/.test(text)) {
+          e.preventDefault();
+          e.stopPropagation();
+          const sanitized = text.replace(/\D/g, '');
+          const start = input.selectionStart || 0;
+          const end = input.selectionEnd || 0;
+          const oldVal = input.value;
+          input.value = oldVal.slice(0, start) + sanitized + oldVal.slice(end);
+          input.setSelectionRange(start + sanitized.length, start + sanitized.length);
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }
+    }
+  }, true);
+
+  // 5. Blur: Clean and validate on field exit
+  document.addEventListener('blur', function (e) {
+    if (isPhoneInputField(e.target)) {
+      const input = e.target;
+      input.value = input.value.trim().replace(/\D/g, '');
+      const feedbackEl = input.parentElement ? input.parentElement.querySelector('.invalid-feedback') : null;
+      if (!isValidPhoneNumber(input.value)) {
+        input.setCustomValidity("Please enter a valid phone number.");
+        input.classList.add('is-invalid');
+        input.classList.remove('is-valid');
+        if (feedbackEl) feedbackEl.textContent = "Please enter a valid phone number.";
+      } else {
+        input.setCustomValidity("");
+        input.classList.remove('is-invalid');
+        input.classList.add('is-valid');
+      }
+    }
+  }, true);
+
+  // Direct element binding for existing inputs on page load
+  const phoneInputs = document.querySelectorAll('input[name="patient_phone"], input[type="tel"], #patientPhone, #home2PatientPhone');
+  phoneInputs.forEach(input => {
+    input.setAttribute('inputmode', 'numeric');
+    input.setAttribute('autocomplete', 'tel');
+    input.setAttribute('pattern', '[0-9]{10,15}');
+    input.setAttribute('maxlength', '15');
+    if (!input.getAttribute('placeholder') || input.getAttribute('placeholder').includes('+') || input.getAttribute('placeholder').includes('(')) {
+      input.setAttribute('placeholder', 'e.g. 9876543210');
+    }
+  });
+
   const appointmentForms = document.querySelectorAll('.appointment-form');
 
   appointmentForms.forEach(form => {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Check form validity
-      if (!form.checkValidity()) {
+      // Validate Phone Number Field explicitly
+      const phoneInput = form.querySelector('[name="patient_phone"], input[type="tel"], #patientPhone, #home2PatientPhone');
+      let isPhoneValid = true;
+      if (phoneInput) {
+        const phoneVal = phoneInput.value.trim().replace(/\D/g, '');
+        phoneInput.value = phoneVal;
+        const feedbackEl = phoneInput.parentElement ? phoneInput.parentElement.querySelector('.invalid-feedback') : null;
+
+        if (!isValidPhoneNumber(phoneVal)) {
+          isPhoneValid = false;
+          phoneInput.setCustomValidity("Please enter a valid phone number.");
+          phoneInput.classList.add('is-invalid');
+          phoneInput.classList.remove('is-valid');
+          if (feedbackEl) {
+            feedbackEl.textContent = "Please enter a valid phone number.";
+          }
+        } else {
+          phoneInput.setCustomValidity("");
+          phoneInput.classList.remove('is-invalid');
+          phoneInput.classList.add('is-valid');
+        }
+      }
+
+      // Check form validity including phone number
+      if (!form.checkValidity() || !isPhoneValid) {
         e.stopPropagation();
         form.classList.add('was-validated');
+        if (phoneInput && !isPhoneValid) {
+          phoneInput.focus();
+        }
         return;
       }
 
@@ -1851,11 +2130,17 @@ function initAuraPureApp() {
         // Populate receipt modal elements if present
         const receiptModalEl = document.getElementById('appointmentSuccessModal');
         if (receiptModalEl) {
-          document.getElementById('receiptName').textContent = nameVal;
-          document.getElementById('receiptDate').textContent = dateVal + ' at ' + timeVal;
-          document.getElementById('receiptTreatment').textContent = treatmentVal;
-          document.getElementById('receiptDoctor').textContent = doctorVal;
-          document.getElementById('receiptContact').textContent = phoneVal + ' (' + emailVal + ')';
+          const rName = document.getElementById('receiptName');
+          const rDate = document.getElementById('receiptDate');
+          const rTreatment = document.getElementById('receiptTreatment');
+          const rDoctor = document.getElementById('receiptDoctor');
+          const rContact = document.getElementById('receiptContact');
+
+          if (rName) rName.textContent = nameVal;
+          if (rDate) rDate.textContent = dateVal + ' at ' + timeVal;
+          if (rTreatment) rTreatment.textContent = treatmentVal;
+          if (rDoctor) rDoctor.textContent = doctorVal;
+          if (rContact) rContact.textContent = phoneVal + (emailVal ? ' (' + emailVal + ')' : '');
 
           const modalInstance = new bootstrap.Modal(receiptModalEl);
           modalInstance.show();
@@ -1865,6 +2150,10 @@ function initAuraPureApp() {
 
         form.reset();
         form.classList.remove('was-validated');
+        if (phoneInput) {
+          phoneInput.classList.remove('is-invalid');
+          phoneInput.setCustomValidity("");
+        }
       }, 700);
     });
   });
@@ -1950,6 +2239,135 @@ function initAuraPureApp() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // ==========================================
+  // 10. Running Number Counters (Smooth Scroll-Triggered Animation)
+  // ==========================================
+  function initRunningCounters() {
+    const counterElements = document.querySelectorAll('.counter-number, [data-counter]');
+    if (!counterElements.length) return;
+
+    function parseCounterConfig(el) {
+      const explicitTarget = el.getAttribute('data-target');
+      const explicitSuffix = el.getAttribute('data-suffix');
+      const explicitPrefix = el.getAttribute('data-prefix');
+      const explicitDecimals = el.getAttribute('data-decimals');
+      const explicitFormat = el.getAttribute('data-format');
+
+      const originalText = el.textContent.trim();
+
+      let targetNum = 0;
+      let suffix = explicitSuffix || '';
+      let prefix = explicitPrefix || '';
+      let decimals = explicitDecimals !== null ? parseInt(explicitDecimals, 10) : 0;
+      let useComma = explicitFormat === 'comma' || originalText.includes(',');
+
+      if (explicitTarget !== null && !isNaN(parseFloat(explicitTarget))) {
+        targetNum = parseFloat(explicitTarget);
+      } else {
+        // Parse from raw text e.g. "18,500+", "98.4%", "1998", "24/7"
+        const cleanStr = originalText.replace(/,/g, '');
+        const match = cleanStr.match(/([-+]?[0-9]*\.?[0-9]+)/);
+        if (match) {
+          targetNum = parseFloat(match[1]);
+          if (match[1].includes('.')) {
+            decimals = match[1].split('.')[1].length;
+          }
+          const numIdx = cleanStr.indexOf(match[1]);
+          if (numIdx > 0 && !prefix) {
+            prefix = cleanStr.substring(0, numIdx).trim();
+          }
+          const afterNum = cleanStr.substring(numIdx + match[1].length).trim();
+          if (afterNum && !suffix) {
+            suffix = afterNum;
+          }
+        }
+      }
+
+      return {
+        targetNum,
+        suffix,
+        prefix,
+        decimals,
+        useComma,
+        originalText
+      };
+    }
+
+    function animateCounter(el, config) {
+      const duration = 1600; // ms
+      const startTime = performance.now();
+      const startNum = 0;
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease Out Cubic function: 1 - (1 - t)^3
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const currentVal = startNum + (config.targetNum - startNum) * ease;
+
+        if (progress < 1) {
+          let formattedValue = '';
+          if (config.decimals > 0) {
+            formattedValue = currentVal.toFixed(config.decimals);
+            if (config.useComma) {
+              const parts = formattedValue.split('.');
+              parts[0] = parseInt(parts[0], 10).toLocaleString('en-US');
+              formattedValue = parts.join('.');
+            }
+          } else {
+            const rounded = Math.round(currentVal);
+            formattedValue = config.useComma ? rounded.toLocaleString('en-US') : String(rounded);
+          }
+
+          el.textContent = config.prefix + formattedValue + config.suffix;
+          requestAnimationFrame(update);
+        } else {
+          // Exactly preserve original intended formatting and text
+          el.textContent = config.originalText;
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    // Set initial 0 state for counters before intersection
+    const configs = new Map();
+    counterElements.forEach(el => {
+      const cfg = parseCounterConfig(el);
+      configs.set(el, cfg);
+      const zeroFormatted = cfg.decimals > 0 ? (0).toFixed(cfg.decimals) : '0';
+      el.textContent = cfg.prefix + zeroFormatted + cfg.suffix;
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const cfg = configs.get(el);
+            if (cfg) {
+              animateCounter(el, cfg);
+            }
+            obs.unobserve(el); // Animate once and never restart on further scrolling
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      counterElements.forEach(el => observer.observe(el));
+    } else {
+      // Fallback: trigger immediately if IntersectionObserver unavailable
+      counterElements.forEach(el => {
+        const cfg = configs.get(el);
+        if (cfg) animateCounter(el, cfg);
+      });
+    }
+  }
+
+  initRunningCounters();
 
   // ==========================================
   // 10. Dynamic Treatment / Service Details (service-details.html)

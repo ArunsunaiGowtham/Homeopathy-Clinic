@@ -143,23 +143,38 @@
               </div>
             </div>
 
-            <form class="appointment-form">
+            <form class="appointment-form needs-validation" novalidate>
               <div class="mb-2">
-                <label class="form-label small">Your Full Name</label>
+                <label class="form-label small">Your Full Name <span class="text-danger">*</span></label>
                 <input type="text" name="patient_name" class="form-control form-control-sm" placeholder="e.g. Clara Henderson" required>
+                <div class="invalid-feedback">Please provide your full name.</div>
               </div>
               <div class="row g-2 mb-2">
                 <div class="col-6">
-                  <label class="form-label small">Phone Number</label>
-                  <input type="tel" name="patient_phone" class="form-control form-control-sm" placeholder="+1 (555) 000-0000" required>
+                  <label class="form-label small">Phone Number <span class="text-danger">*</span></label>
+                  <input type="tel" 
+                         id="home2PatientPhone"
+                         name="patient_phone" 
+                         class="form-control form-control-sm" 
+                         placeholder="e.g. 9876543210" 
+                         pattern="[0-9]{10,15}" 
+                         maxlength="15" 
+                         inputmode="numeric"
+                         autocomplete="tel"
+                         required
+                         oninput="this.value=this.value.replace(/\D/g,'');if(!/^[0-9]{10,15}$/.test(this.value)){this.setCustomValidity('Please enter a valid phone number.');this.classList.add('is-invalid');this.classList.remove('is-valid');}else{this.setCustomValidity('');this.classList.remove('is-invalid');this.classList.add('is-valid');}"
+                         onblur="this.value=this.value.trim().replace(/\D/g,'');if(!/^[0-9]{10,15}$/.test(this.value)){this.setCustomValidity('Please enter a valid phone number.');this.classList.add('is-invalid');this.classList.remove('is-valid');}else{this.setCustomValidity('');this.classList.remove('is-invalid');this.classList.add('is-valid');}"
+                         onkeydown="if(!/^[0-9]$/.test(event.key)&&!['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','Enter','Escape'].includes(event.key)&&!event.ctrlKey&&!event.metaKey){event.preventDefault();}">
+                  <div class="invalid-feedback">Please enter a valid phone number.</div>
                 </div>
                 <div class="col-6">
-                  <label class="form-label small">Email Address</label>
+                  <label class="form-label small">Email Address <span class="text-danger">*</span></label>
                   <input type="email" name="patient_email" class="form-control form-control-sm" placeholder="you@email.com" required>
+                  <div class="invalid-feedback">Please provide a valid email.</div>
                 </div>
               </div>
               <div class="mb-2">
-                <label class="form-label small">Primary Health Concern</label>
+                <label class="form-label small">Primary Health Concern <span class="text-danger">*</span></label>
                 <select name="treatment_type" class="form-select form-select-sm" required>
                   <option value="" disabled selected>Select condition category...</option>
                   <option value="Chronic Conditions">Chronic Condition (Thyroid, Arthritis, Autoimmune)</option>
@@ -169,19 +184,22 @@
                   <option value="Stress & Wellness">Stress, Anxiety &amp; Sleep Wellness</option>
                   <option value="Women's Health">Women's Hormonal Health</option>
                 </select>
+                <div class="invalid-feedback">Please select a health concern.</div>
               </div>
               <div class="row g-2 mb-3">
                 <div class="col-6">
-                  <label class="form-label small">Preferred Date</label>
+                  <label class="form-label small">Preferred Date <span class="text-danger">*</span></label>
                   <input type="date" name="appointment_date" class="form-control form-control-sm" required>
+                  <div class="invalid-feedback">Please select a date.</div>
                 </div>
                 <div class="col-6">
-                  <label class="form-label small">Preferred Time</label>
+                  <label class="form-label small">Preferred Time <span class="text-danger">*</span></label>
                   <select name="appointment_time" class="form-select form-select-sm" required>
                     <option value="Morning (09:00 AM - 12:00 PM)">Morning</option>
                     <option value="Afternoon (01:00 PM - 04:00 PM)">Afternoon</option>
                     <option value="Evening (04:00 PM - 07:00 PM)">Evening</option>
                   </select>
+                  <div class="invalid-feedback">Please select a time.</div>
                 </div>
               </div>
               <div class="form-check mb-3">
@@ -189,11 +207,124 @@
                 <label class="form-check-label small text-secondary" for="nicheConsent">
                   I agree to <a href="privacy-policy.html" class="text-success text-decoration-underline" target="_blank">privacy policy</a> &amp; <a href="terms-of-care.html" class="text-success text-decoration-underline" target="_blank">consultation terms</a>.
                 </label>
+                <div class="invalid-feedback">You must agree before submitting.</div>
               </div>
               <button type="submit" class="btn-clinic-primary w-100 justify-content-center">
                 <i class="bi bi-check-circle"></i> Reserve Consultation Slot
               </button>
             </form>
+
+            <!-- Inline Strict Phone Number Validator & Letter Blocker -->
+            <script>
+              (function () {
+                var phoneInput = document.getElementById('home2PatientPhone') || document.querySelector('input[name="patient_phone"]');
+                var form = phoneInput ? phoneInput.closest('form') : document.querySelector('.appointment-form');
+
+                function sanitize(val) {
+                  return (val || '').replace(/\D/g, '');
+                }
+
+                function isPhoneValid(val) {
+                  if (!val || typeof val !== 'string') return false;
+                  var trimmed = val.trim();
+                  return /^[0-9]{10,15}$/.test(trimmed);
+                }
+
+                if (phoneInput) {
+                  phoneInput.addEventListener('keydown', function (e) {
+                    var allowed = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
+                    if (allowed.indexOf(e.key) !== -1 || e.ctrlKey || e.metaKey || e.altKey) return;
+                    if (!/^[0-9]$/.test(e.key)) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }
+                  });
+
+                  phoneInput.addEventListener('beforeinput', function (e) {
+                    if (e.data && /\D/.test(e.data)) {
+                      e.preventDefault();
+                    }
+                  });
+
+                  phoneInput.addEventListener('input', function () {
+                    var clean = sanitize(this.value);
+                    if (this.value !== clean) {
+                      this.value = clean;
+                    }
+                    var feedback = this.parentElement ? this.parentElement.querySelector('.invalid-feedback') : null;
+                    if (this.value.length > 0) {
+                      if (!isPhoneValid(this.value)) {
+                        this.setCustomValidity('Please enter a valid phone number.');
+                        this.classList.add('is-invalid');
+                        this.classList.remove('is-valid');
+                        if (feedback) feedback.textContent = 'Please enter a valid phone number.';
+                      } else {
+                        this.setCustomValidity('');
+                        this.classList.remove('is-invalid');
+                        this.classList.add('is-valid');
+                      }
+                    } else {
+                      this.setCustomValidity('Please enter a valid phone number.');
+                      this.classList.remove('is-valid');
+                      if (feedback) feedback.textContent = 'Please enter a valid phone number.';
+                    }
+                  });
+
+                  phoneInput.addEventListener('blur', function () {
+                    this.value = sanitize(this.value.trim());
+                    var feedback = this.parentElement ? this.parentElement.querySelector('.invalid-feedback') : null;
+                    if (!isPhoneValid(this.value)) {
+                      this.setCustomValidity('Please enter a valid phone number.');
+                      this.classList.add('is-invalid');
+                      this.classList.remove('is-valid');
+                      if (feedback) feedback.textContent = 'Please enter a valid phone number.';
+                    } else {
+                      this.setCustomValidity('');
+                      this.classList.remove('is-invalid');
+                      this.classList.add('is-valid');
+                    }
+                  });
+
+                  phoneInput.addEventListener('paste', function (e) {
+                    var text = (e.clipboardData || window.clipboardData).getData('text') || '';
+                    if (/\D/.test(text)) {
+                      e.preventDefault();
+                      var clean = sanitize(text);
+                      var start = this.selectionStart || 0;
+                      var end = this.selectionEnd || 0;
+                      this.value = this.value.slice(0, start) + clean + this.value.slice(end);
+                      this.setSelectionRange(start + clean.length, start + clean.length);
+                      this.dispatchEvent(new Event('input', { bubbles: true }));
+                    }
+                  });
+                }
+
+                if (form) {
+                  form.addEventListener('submit', function (e) {
+                    var p = form.querySelector('[name="patient_phone"], input[type="tel"]');
+                    if (p) {
+                      var val = sanitize(p.value.trim());
+                      p.value = val;
+                      var feedback = p.parentElement ? p.parentElement.querySelector('.invalid-feedback') : null;
+                      if (!isPhoneValid(val)) {
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+                        p.classList.add('is-invalid');
+                        p.classList.remove('is-valid');
+                        p.setCustomValidity('Please enter a valid phone number.');
+                        if (feedback) feedback.textContent = 'Please enter a valid phone number.';
+                        p.focus();
+                        return false;
+                      } else {
+                        p.setCustomValidity('');
+                        p.classList.remove('is-invalid');
+                        p.classList.add('is-valid');
+                      }
+                    }
+                  }, true);
+                }
+              })();
+            </script>
           </div>
         </div>
       </div>
@@ -575,6 +706,6 @@
   <!-- Bootstrap 5.3 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=2.5"></script>
 </body>
 </html>

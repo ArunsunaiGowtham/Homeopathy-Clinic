@@ -1151,6 +1151,21 @@ img {
   flex-direction: column;
 }
 
+.testimonial-card.h-100,
+.row.align-items-stretch > [class*="col-"] > .testimonial-card:only-child,
+.row.align-items-stretch > [class*="col-"].d-flex > .testimonial-card {
+  height: 100%;
+}
+
+.testimonial-card > p,
+.testimonial-card .card-desc {
+  flex-grow: 1;
+}
+
+.testimonial-card .border-top {
+  margin-top: auto;
+}
+
 .testimonial-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
@@ -2593,9 +2608,10 @@ img {
   }
   .floating-stat-card {
     position: absolute;
-    bottom: 12px;
-    left: 12px;
-    right: 12px;
+    bottom: 16px;
+    left: 16px;
+    right: auto;
+    max-width: 360px;
     margin-top: 0;
     padding: 0.65rem 0.9rem;
     background: rgba(255, 255, 255, 0.95);
@@ -2927,8 +2943,24 @@ img {
     line-height: 1.2;
     display: block;
   }
+  .hero-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+  }
   .hero-image-wrapper img {
-    height: 270px;
+    height: 250px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .floating-stat-card {
+    position: static;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border-top: none;
+    box-shadow: none;
   }
   .section-header {
     margin-bottom: 2rem;
@@ -3058,4 +3090,41 @@ img {
   transform: translateX(2px);
   font-weight: bold;
 }
+
+/* ==========================================
+   Strict Phone Input Validation Styling
+   Guarantees that phone inputs never show valid green checkmarks on letters or invalid formats
+   ========================================== */
+.was-validated input[name="patient_phone"]:invalid,
+.was-validated #patientPhone:invalid,
+.was-validated #home2PatientPhone:invalid,
+input[name="patient_phone"].is-invalid,
+#patientPhone.is-invalid,
+#home2PatientPhone.is-invalid {
+  border-color: #dc3545 !important;
+  padding-right: calc(1.5em + 0.75rem) !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right calc(0.375em + 0.1875rem) center !important;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+}
+
+.was-validated input[name="patient_phone"]:invalid ~ .invalid-feedback,
+.was-validated #patientPhone:invalid ~ .invalid-feedback,
+.was-validated #home2PatientPhone:invalid ~ .invalid-feedback,
+input[name="patient_phone"].is-invalid ~ .invalid-feedback,
+#patientPhone.is-invalid ~ .invalid-feedback,
+#home2PatientPhone.is-invalid ~ .invalid-feedback {
+  display: block !important;
+}
+
+.was-validated input[name="patient_phone"]:invalid ~ .valid-feedback,
+.was-validated #patientPhone:invalid ~ .valid-feedback,
+.was-validated #home2PatientPhone:invalid ~ .valid-feedback,
+input[name="patient_phone"].is-invalid ~ .valid-feedback,
+#patientPhone.is-invalid ~ .valid-feedback,
+#home2PatientPhone.is-invalid ~ .valid-feedback {
+  display: none !important;
+}
+
 
