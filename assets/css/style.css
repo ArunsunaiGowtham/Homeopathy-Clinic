@@ -73,9 +73,9 @@
   --bg-surface-tertiary: #1b3427;
   --bg-card: #12241b;
 
-  --text-primary: #eaf5ee;
-  --text-secondary: #b3c9bc;
-  --text-muted: #769381;
+  --text-primary: #f2f8f4;
+  --text-secondary: #c0d8cc;
+  --text-muted: #9bb5a6;
 
   --border-color: #1f3b2c;
   --border-color-subtle: #183023;
@@ -84,6 +84,29 @@
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
   --shadow-hover: 0 20px 48px rgba(0, 0, 0, 0.6);
+
+  /* Bootstrap 5 Theme Variables for High Contrast */
+  --bs-body-color: #f2f8f4;
+  --bs-body-bg: #0a140f;
+  --bs-body-color-rgb: 242, 248, 244;
+  --bs-body-bg-rgb: 10, 20, 15;
+  --bs-secondary-color: #c0d8cc;
+  --bs-secondary-rgb: 192, 216, 204;
+  --bs-tertiary-color: #9bb5a6;
+  --bs-tertiary-bg: #15291f;
+  --bs-tertiary-bg-rgb: 21, 41, 31;
+  --bs-emphasis-color: #ffffff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-border-color: #1f3b2c;
+  --bs-card-bg: #12241b;
+  --bs-card-color: #f2f8f4;
+  --bs-accordion-bg: #12241b;
+  --bs-accordion-color: #f2f8f4;
+  --bs-accordion-border-color: #1f3b2c;
+  --bs-accordion-btn-bg: #102018;
+  --bs-accordion-btn-color: #f2f8f4;
+  --bs-accordion-active-bg: #15291f;
+  --bs-accordion-active-color: #74c69d;
 }
 
 /* ==========================================================================
@@ -140,6 +163,279 @@ img {
   height: auto;
   display: block;
 }
+
+/* Universal Text Contrast & Bootstrap Utility Overrides */
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+[data-bs-theme="dark"] .text-secondary,
+[data-bs-theme="dark"] p.text-secondary,
+[data-bs-theme="dark"] span.text-secondary,
+[data-bs-theme="dark"] div.text-secondary,
+[data-bs-theme="dark"] small.text-secondary,
+[data-bs-theme="dark"] li.text-secondary,
+[data-bs-theme="dark"] td.text-secondary {
+  color: #c0d8cc !important;
+}
+
+[data-bs-theme="dark"] .text-muted,
+[data-bs-theme="dark"] p.text-muted,
+[data-bs-theme="dark"] small.text-muted,
+[data-bs-theme="dark"] span.text-muted,
+[data-bs-theme="dark"] div.text-muted {
+  color: #9bb5a6 !important;
+}
+
+[data-bs-theme="dark"] .text-dark {
+  color: #f2f8f4 !important;
+}
+
+[data-bs-theme="dark"] p {
+  color: #c0d8cc;
+}
+
+[data-bs-theme="dark"] .lead {
+  color: #d8ebe1 !important;
+}
+
+/* Accordion Specific Theme Styling */
+.accordion-item {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+}
+
+.accordion-button {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+  font-weight: 600;
+  padding: 1.1rem 1.25rem;
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--bg-surface-secondary) !important;
+  color: var(--color-primary) !important;
+}
+
+.accordion-body {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-secondary) !important;
+  padding: 1.1rem 1.25rem 1.35rem !important;
+  line-height: 1.75;
+}
+
+[data-bs-theme="dark"] .accordion-item {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .accordion-button {
+  background-color: var(--bg-surface) !important;
+  color: #f2f8f4 !important;
+}
+
+[data-bs-theme="dark"] .accordion-button:not(.collapsed) {
+  background-color: var(--bg-surface-secondary) !important;
+  color: #74c69d !important;
+}
+
+[data-bs-theme="dark"] .accordion-body,
+[data-bs-theme="dark"] .accordion-body.text-secondary {
+  background-color: var(--bg-surface) !important;
+  color: #c0d8cc !important;
+}
+
+/* Dark Mode Surfaces, Cards, Badges & Tables */
+[data-bs-theme="dark"] .card-wellness {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .card-wellness p,
+[data-bs-theme="dark"] .card-wellness .text-secondary {
+  color: #c0d8cc !important;
+}
+
+[data-bs-theme="dark"] .card-wellness h4,
+[data-bs-theme="dark"] .card-wellness h5,
+[data-bs-theme="dark"] .card-wellness h6 {
+  color: #f2f8f4 !important;
+}
+
+[data-bs-theme="dark"] .card-wellness .text-muted {
+  color: #9bb5a6 !important;
+}
+
+[data-bs-theme="dark"] .bg-surface {
+  background-color: var(--bg-surface) !important;
+}
+
+[data-bs-theme="dark"] .bg-surface-secondary {
+  background-color: var(--bg-surface-secondary) !important;
+}
+
+[data-bs-theme="dark"] .bg-surface-tertiary,
+[data-bs-theme="dark"] .bg-body-tertiary,
+[data-bs-theme="dark"] .bg-body-secondary,
+[data-bs-theme="dark"] .bg-light {
+  background-color: var(--bg-surface-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-bs-theme="dark"] .table {
+  color: #f2f8f4 !important;
+}
+
+[data-bs-theme="dark"] .table td,
+[data-bs-theme="dark"] .table th {
+  color: #f2f8f4 !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .table .text-secondary {
+  color: #c0d8cc !important;
+}
+
+[data-bs-theme="dark"] .badge.bg-light {
+  background-color: var(--bg-surface-tertiary) !important;
+  color: #74c69d !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .treatment-nav-item {
+  color: #c0d8cc !important;
+}
+
+[data-bs-theme="dark"] .treatment-nav-item:hover {
+  background-color: rgba(82, 183, 136, 0.15) !important;
+  color: #74c69d !important;
+  border-color: rgba(82, 183, 136, 0.3) !important;
+}
+
+[data-bs-theme="dark"] .treatment-nav-item.active-treatment-item {
+  background: rgba(82, 183, 136, 0.18) !important;
+  color: #52b788 !important;
+  border: 1.5px solid rgba(82, 183, 136, 0.45) !important;
+}
+
+[data-bs-theme="dark"] .treatment-nav-item.active-treatment-item i.bi-chevron-right {
+  color: #52b788 !important;
+}
+
+[data-bs-theme="dark"] .form-label {
+  color: #f2f8f4 !important;
+}
+
+[data-bs-theme="dark"] .testimonial-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .testimonial-card p,
+[data-bs-theme="dark"] .testimonial-card .text-secondary {
+  color: #c0d8cc !important;
+}
+
+[data-bs-theme="dark"] .testimonial-card h6 {
+  color: #f2f8f4 !important;
+}
+
+[data-bs-theme="dark"] .testimonial-card .text-muted {
+  color: #9bb5a6 !important;
+}
+
+[data-bs-theme="dark"] .form-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .form-card p,
+[data-bs-theme="dark"] .form-card .text-secondary {
+  color: #c0d8cc !important;
+}
+
+[data-bs-theme="dark"] .modal-content {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  color: #f2f8f4 !important;
+}
+
+[data-bs-theme="dark"] .modal-content .text-muted,
+[data-bs-theme="dark"] .modal-content .text-secondary {
+  color: #c0d8cc !important;
+}
+
+[data-bs-theme="dark"] .modal-content h4,
+[data-bs-theme="dark"] .modal-content h5,
+[data-bs-theme="dark"] .modal-content h6 {
+  color: #f2f8f4 !important;
+}
+
+[data-bs-theme="dark"] .modal-content .bg-light {
+  background-color: var(--bg-surface-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  background-color: var(--bg-surface) !important;
+  color: #f2f8f4 !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .form-control::placeholder {
+  color: #769381 !important;
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+  background-color: var(--bg-surface-secondary) !important;
+  color: #ffffff !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(82, 183, 136, 0.25) !important;
+}
+
+[data-bs-theme="dark"] .breadcrumb-item a {
+  color: #74c69d !important;
+}
+
+[data-bs-theme="dark"] .breadcrumb-item.active {
+  color: #c0d8cc !important;
+}
+
+[data-bs-theme="dark"] .breadcrumb-item + .breadcrumb-item::before {
+  color: #769381 !important;
+}
+
+[data-bs-theme="dark"] .section-title {
+  color: #f2f8f4 !important;
+}
+
+[data-bs-theme="dark"] .section-subtitle {
+  color: #c0d8cc !important;
+}
+
+[data-bs-theme="dark"] .doctor-card,
+[data-bs-theme="dark"] .pricing-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="dark"] .doctor-card p,
+[data-bs-theme="dark"] .doctor-card .text-secondary,
+[data-bs-theme="dark"] .pricing-card p,
+[data-bs-theme="dark"] .pricing-card .text-secondary {
+  color: #c0d8cc !important;
+}
+
 
 /* ==========================================================================
    Navigation Control Buttons (Theme / RTL)
@@ -3056,7 +3352,7 @@ img {
   align-items: center !important;
   padding: 10px 14px !important;
   border-radius: 10px !important;
-  color: #475569 !important;
+  color: var(--text-secondary) !important;
   text-decoration: none !important;
   font-size: 0.9rem !important;
   font-weight: 500 !important;
@@ -3079,7 +3375,7 @@ img {
 
 .treatment-nav-item.active-treatment-item {
   background: rgba(16, 185, 129, 0.12) !important;
-  color: #065f46 !important;
+  color: var(--color-primary, #065f46) !important;
   font-weight: 700 !important;
   border: 1.5px solid rgba(16, 185, 129, 0.45) !important;
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1) !important;
@@ -3089,6 +3385,26 @@ img {
   color: var(--color-primary, #059669) !important;
   transform: translateX(2px);
   font-weight: bold;
+}
+
+[data-bs-theme="dark"] .treatment-nav-item {
+  color: #c0d8cc !important;
+}
+
+[data-bs-theme="dark"] .treatment-nav-item:hover {
+  background-color: rgba(82, 183, 136, 0.15) !important;
+  color: #74c69d !important;
+  border-color: rgba(82, 183, 136, 0.3) !important;
+}
+
+[data-bs-theme="dark"] .treatment-nav-item.active-treatment-item {
+  background: rgba(82, 183, 136, 0.18) !important;
+  color: #52b788 !important;
+  border: 1.5px solid rgba(82, 183, 136, 0.45) !important;
+}
+
+[data-bs-theme="dark"] .treatment-nav-item.active-treatment-item i.bi-chevron-right {
+  color: #52b788 !important;
 }
 
 /* ==========================================

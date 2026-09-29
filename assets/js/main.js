@@ -32,6 +32,11 @@
 
   document.addEventListener('keydown', function (e) {
     if (isPhoneField(e.target)) {
+      if (e.key === ' ' || e.code === 'Space') {
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
       var allowedKeys = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
       if (allowedKeys.indexOf(e.key) !== -1 || e.ctrlKey || e.metaKey || e.altKey) return;
       if (!/^[0-9]$/.test(e.key)) {
@@ -109,10 +114,9 @@
     if (form && typeof form.querySelector === 'function') {
       var phoneInput = form.querySelector('input[name="patient_phone"], input[type="tel"], #patientPhone, #home2PatientPhone');
       if (phoneInput) {
-        var val = sanitize(phoneInput.value.trim());
-        phoneInput.value = val;
+        var rawVal = phoneInput.value.trim();
         var feedback = phoneInput.parentElement ? phoneInput.parentElement.querySelector('.invalid-feedback') : null;
-        if (!isPhoneValid(val)) {
+        if (!isPhoneValid(rawVal)) {
           e.preventDefault();
           e.stopImmediatePropagation();
           phoneInput.classList.add('is-invalid');
@@ -1968,6 +1972,11 @@ function initAuraPureApp() {
   // 2. Keydown: Prevents alphabetic and disallowed keys from being pressed directly
   document.addEventListener('keydown', function (e) {
     if (isPhoneInputField(e.target)) {
+      if (e.key === ' ' || e.code === 'Space') {
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
       const allowedNavigationKeys = [
         'Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 
         'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'
@@ -2076,8 +2085,7 @@ function initAuraPureApp() {
       const phoneInput = form.querySelector('[name="patient_phone"], input[type="tel"], #patientPhone, #home2PatientPhone');
       let isPhoneValid = true;
       if (phoneInput) {
-        const phoneVal = phoneInput.value.trim().replace(/\D/g, '');
-        phoneInput.value = phoneVal;
+        const phoneVal = phoneInput.value.trim();
         const feedbackEl = phoneInput.parentElement ? phoneInput.parentElement.querySelector('.invalid-feedback') : null;
 
         if (!isValidPhoneNumber(phoneVal)) {

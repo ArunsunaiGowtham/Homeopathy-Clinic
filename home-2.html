@@ -164,7 +164,7 @@
                          required
                          oninput="this.value=this.value.replace(/\D/g,'');if(!/^[0-9]{10,15}$/.test(this.value)){this.setCustomValidity('Please enter a valid phone number.');this.classList.add('is-invalid');this.classList.remove('is-valid');}else{this.setCustomValidity('');this.classList.remove('is-invalid');this.classList.add('is-valid');}"
                          onblur="this.value=this.value.trim().replace(/\D/g,'');if(!/^[0-9]{10,15}$/.test(this.value)){this.setCustomValidity('Please enter a valid phone number.');this.classList.add('is-invalid');this.classList.remove('is-valid');}else{this.setCustomValidity('');this.classList.remove('is-invalid');this.classList.add('is-valid');}"
-                         onkeydown="if(!/^[0-9]$/.test(event.key)&&!['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','Enter','Escape'].includes(event.key)&&!event.ctrlKey&&!event.metaKey){event.preventDefault();}">
+                         onkeydown="if(event.key===' '||event.code==='Space'||(!/^[0-9]$/.test(event.key)&&!['Backspace','Delete','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','Enter','Escape'].includes(event.key)&&!event.ctrlKey&&!event.metaKey)){event.preventDefault();}">
                   <div class="invalid-feedback">Please enter a valid phone number.</div>
                 </div>
                 <div class="col-6">
@@ -232,6 +232,11 @@
 
                 if (phoneInput) {
                   phoneInput.addEventListener('keydown', function (e) {
+                    if (e.key === ' ' || e.code === 'Space') {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      return;
+                    }
                     var allowed = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
                     if (allowed.indexOf(e.key) !== -1 || e.ctrlKey || e.metaKey || e.altKey) return;
                     if (!/^[0-9]$/.test(e.key)) {
@@ -303,8 +308,7 @@
                   form.addEventListener('submit', function (e) {
                     var p = form.querySelector('[name="patient_phone"], input[type="tel"]');
                     if (p) {
-                      var val = sanitize(p.value.trim());
-                      p.value = val;
+                      var val = p.value.trim();
                       var feedback = p.parentElement ? p.parentElement.querySelector('.invalid-feedback') : null;
                       if (!isPhoneValid(val)) {
                         e.preventDefault();
