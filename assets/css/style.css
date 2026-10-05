@@ -502,7 +502,12 @@ img {
   display: inline-flex !important;
   visibility: visible !important;
   opacity: 1 !important;
-  min-width: 72px;
+  min-width: 52px;
+  justify-content: center !important;
+}
+
+.rtl-toggle-btn i {
+  display: none !important;
 }
 
 .rtl-toggle-btn .dir-text {
@@ -535,6 +540,17 @@ img {
 
 [data-bs-theme="dark"] .rtl-toggle-btn .dir-text {
   color: #74c69d !important;
+}
+
+[data-bs-theme="dark"] .btn-clinic-secondary {
+  color: #74c69d !important;
+  border-color: #52b788 !important;
+}
+
+[data-bs-theme="dark"] .btn-clinic-secondary:hover {
+  background: rgba(82, 183, 136, 0.15) !important;
+  border-color: #74c69d !important;
+  color: #ffffff !important;
 }
 
 /* ==========================================================================
@@ -1029,26 +1045,46 @@ img {
 /* ==========================================================================
    Buttons & Badges
    ========================================================================= */
-.btn-clinic-primary {
-  background: var(--color-primary-gradient);
-  color: #ffffff !important;
-  border: none;
+.btn-clinic-primary,
+.btn-clinic-secondary,
+.btn-clinic-accent,
+.btn-clinic-outline-light {
+  height: 48px;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  padding: 0 1.25rem;
-  font-size: 0.86rem;
+  line-height: 1;
   border-radius: var(--radius-pill);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  white-space: nowrap !important;
-  height: 38px;
-  min-height: 38px;
-  max-height: 38px;
-  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  white-space: nowrap;
+  gap: 0.5rem;
+  box-sizing: border-box;
   flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(36, 88, 63, 0.25);
   transition: var(--transition-smooth);
+}
+
+.btn-clinic-primary i,
+.btn-clinic-secondary i,
+.btn-clinic-accent i,
+.btn-clinic-outline-light i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.btn-clinic-primary {
+  background: var(--color-primary-gradient);
+  color: #ffffff !important;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 14px rgba(36, 88, 63, 0.25);
 }
 
 .btn-clinic-primary:hover {
@@ -1060,14 +1096,7 @@ img {
 .btn-clinic-secondary {
   background: transparent;
   color: var(--color-primary) !important;
-  border: 1.5px solid var(--color-primary);
-  font-weight: 600;
-  padding: 0.62rem 1.4rem;
-  border-radius: var(--radius-pill);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: var(--transition-smooth);
+  border: 2px solid var(--color-primary);
 }
 
 .btn-clinic-secondary:hover {
@@ -1080,20 +1109,85 @@ img {
 .btn-clinic-accent {
   background: var(--color-accent-gradient);
   color: #ffffff !important;
-  border: none;
-  font-weight: 600;
-  padding: 0.65rem 1.45rem;
-  border-radius: var(--radius-pill);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  border: 2px solid transparent;
   box-shadow: 0 4px 14px rgba(198, 138, 76, 0.25);
-  transition: var(--transition-smooth);
 }
 
 .btn-clinic-accent:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(198, 138, 76, 0.35);
+  color: #ffffff !important;
+}
+
+.btn-clinic-outline-light {
+  background: transparent;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.btn-clinic-outline-light:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Small Button Variant */
+.btn-clinic-primary.btn-sm,
+.btn-clinic-secondary.btn-sm,
+.btn-clinic-accent.btn-sm {
+  height: 36px;
+  min-height: 36px;
+  max-height: 36px;
+  padding: 0 1rem;
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+/* Navbar CTA Button Override - Perfectly Balanced with 38px Header Controls */
+.navbar-actions .btn-clinic-primary,
+.navbar-clinic .navbar-actions .btn-clinic-primary {
+  height: 38px !important;
+  min-height: 38px !important;
+  max-height: 38px !important;
+  padding: 0 1.15rem !important;
+  font-size: 0.84rem !important;
+  line-height: 1 !important;
+  border-width: 0 !important;
+  box-shadow: 0 2px 8px rgba(36, 88, 63, 0.2) !important;
+}
+
+/* Reusable CTA Button Group & Pairs Across All Sections */
+.cta-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cta-btn-group .btn-clinic-primary,
+.cta-btn-group .btn-clinic-secondary,
+.cta-btn-group .btn-clinic-accent,
+.cta-btn-group .btn-clinic-outline-light {
+  height: 48px;
+  min-height: 48px;
+}
+
+@media (max-width: 575.98px) {
+  .cta-btn-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .cta-btn-group .btn-clinic-primary,
+  .cta-btn-group .btn-clinic-secondary,
+  .cta-btn-group .btn-clinic-accent,
+  .cta-btn-group .btn-clinic-outline-light,
+  .cta-btn-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .badge-wellness {
@@ -1718,12 +1812,13 @@ img {
 
 .article-nav-actions .btn-clinic-primary,
 .article-nav-actions .btn-clinic-secondary {
-  min-height: 44px;
+  height: 48px;
+  min-height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.65rem 1.35rem;
-  font-size: 0.92rem;
+  padding: 0 1.5rem;
+  font-size: 0.95rem;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -1949,8 +2044,13 @@ img {
 
 .pricing-cta .btn-clinic-primary,
 .pricing-cta .btn-clinic-secondary {
+  height: 48px;
+  min-height: 48px;
+  max-height: 48px;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  padding: 0.75rem 1rem;
+  padding: 0 1rem;
   font-size: 0.92rem;
   font-weight: 600;
   width: 100%;
