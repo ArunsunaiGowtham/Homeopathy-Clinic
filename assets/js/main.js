@@ -2780,6 +2780,55 @@ function initAuraPureApp() {
       ctaTitle: "Begin Your Journey to Whole-Person Vitality",
       ctaLead: "Schedule your comprehensive 90-minute constitutional consultation with our senior medical team today.",
       ctaBtn: "Book Foundation Consultation"
+    },
+    musculoskeletal: {
+      id: 'musculoskeletal',
+      shortTitle: 'Musculoskeletal & Joint Care',
+      badgeIcon: 'bi-activity',
+      badgeText: 'Classical Orthopedic Homeopathy',
+      title: 'Targeted Natural Relief for Joints, Spine & Mobility',
+      heroLead: 'Rebuilding joint flexibility, calming chronic inflammation, and supporting cartilage repair naturally without NSAIDs or steroid injections.',
+      image: 'assets/images/treatment-musculoskeletal.jpg',
+      imageAlt: 'Musculoskeletal and joint health consultation with natural homeopathic remedies and spine alignment care',
+      overviewTag: 'Mobility & Orthopedic Wellness',
+      overviewTitle: 'Restoring Natural Joint Mechanics & Cartilage Vitality',
+      overviewP1: 'Musculoskeletal disorders—ranging from cervical spondylosis and osteoarthritis to tendonitis and sciatica—frequently stem from systemic inflammation, biomechanical strain, and cellular dehydration. Rather than masking pain with analgesics, classical homeopathy addresses deep tissue repair.',
+      overviewP2: 'Our constitutional approach targets connective tissue metabolism, eases synovial tension, and reduces chronic muscle spasm. By stimulating systemic healing, patients regain active range of motion and pain-free flexibility.',
+      conditions: [
+        { title: "Cervical Spondylosis & Neck Stiffness", desc: "Soothing radiating neck aches, nerve impingement, and occipital headaches." },
+        { title: "Osteoarthritis & Knee Degeneration", desc: "Alleviating weight-bearing knee friction, crepitus, and morning stiffness." },
+        { title: "Sciatica & Lumbar Disc Strain", desc: "Relieving shooting nerve pain, lower back spasms, and postural tightness." },
+        { title: "Tendinopathy & Sports Strain", desc: "Accelerating tendon recovery, tennis elbow comfort, and ligamentous resilience." }
+      ],
+      protocol: [
+        { stage: "Stage 1", title: "Biomechanical & Inflammatory Assessment", desc: "Detailed examination of pain modalities, weather sensitivity, movement triggers, and joint history." },
+        { stage: "Stage 2", title: "Deep Connective Tissue Repertorization", desc: "Selecting proven tissue remedies such as Arnica, Rhus Tox, Bryonia, Ruta, or Calcarea Fluorica." },
+        { stage: "Stage 3", title: "Targeted Micro-Dose Administration", desc: "Non-sedating, non-gastric irritant potencies that enhance micro-circulation around affected joints." },
+        { stage: "Stage 4", title: "Mobility Maintenance & Joint Shield", desc: "Long-term cellular nourishment ensuring sustained flexibility and preventing recurrent flare-ups." }
+      ],
+      benefits: [
+        { icon: "bi-shield-check", text: "Zero Gastrointestinal Irritation or Ulcer Risk" },
+        { icon: "bi-activity", text: "Improves Synovial Fluid & Joint Flexibility" },
+        { icon: "bi-heart-pulse", text: "Safe for Seniors with Polypharmacy" },
+        { icon: "bi-check2-circle", text: "Enhances Cartilage & Tendon Repair" }
+      ],
+      specialist: {
+        name: "Dr. Henrik Sorensen",
+        degree: "MD (Hom), Specialist in Orthopedic & Sports Homeopathy",
+        role: "Musculoskeletal & Mobility Lead Physician",
+        image: "assets/images/dr-henrik-sorensen.jpg",
+        bio: "Specializing in classical orthopedic homeopathy and sports injury rehabilitation with over 18 years of clinical practice restoring painless movement."
+      },
+      price: "$145",
+      priceDesc: "Includes initial 75-minute mobility appraisal, customized repertory analysis, and 1 month supply of homeopathic remedies.",
+      faqs: [
+        { q: "Can homeopathic remedies help if I already have joint wear and tear?", a: "Yes. While severe anatomical erosion cannot be reversed overnight, homeopathy dramatically reduces synovial inflammation, eases stiffness, relieves nerve pressure, and supports surrounding soft tissue integrity." },
+        { q: "Will these remedies upset my stomach like conventional painkillers?", a: "No. Homeopathic remedies are ultra-diluted, gentle, and cause no gastric irritation, ulcers, or kidney strain." },
+        { q: "How quickly will I notice pain relief?", a: "Acute sprains and spasms often respond within hours to days. Chronic degenerative joint conditions typically experience noticeable stiffness reduction within 3 to 4 weeks." }
+      ],
+      ctaTitle: "Rediscover Pain-Free Movement Naturally",
+      ctaLead: "Experience gentle, restorative care designed to protect your joints and renew your daily physical freedom.",
+      ctaBtn: "Book Musculoskeletal Consultation"
     }
   };
 
@@ -2805,7 +2854,12 @@ function initAuraPureApp() {
       'stress-management': 'stress',
       'stress': 'stress',
       'general-consultation': 'general',
-      'general': 'general'
+      'general': 'general',
+      'musculoskeletal': 'musculoskeletal',
+      'musculoskeletal-care': 'musculoskeletal',
+      'joint-care': 'musculoskeletal',
+      'joints': 'musculoskeletal',
+      'mobility': 'musculoskeletal'
     };
 
     function parseTreatmentKey(candidate) {
