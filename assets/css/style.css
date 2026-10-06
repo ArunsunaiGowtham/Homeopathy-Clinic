@@ -2321,6 +2321,22 @@ img {
 
 .footer-clinic .footer-brand {
   gap: 0.75rem;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.footer-clinic .footer-brand:hover {
+  text-decoration: none !important;
+}
+
+.footer-clinic .footer-brand:hover .brand-icon {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+.footer-clinic .footer-brand:hover span {
+  opacity: 0.92;
 }
 
 .footer-clinic .brand-icon {
