@@ -118,6 +118,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 85px;
   font-size: 16px;
   overflow-x: clip;
   max-width: 100%;
@@ -583,6 +584,34 @@ img {
   background: rgba(82, 183, 136, 0.15) !important;
   border-color: #74c69d !important;
   color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary {
+  color: #e2f0e8 !important;
+  border-color: rgba(116, 198, 157, 0.45) !important;
+  background-color: rgba(18, 42, 30, 0.85) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary:hover,
+[data-bs-theme="dark"] .btn-outline-secondary:focus,
+[data-bs-theme="dark"] .btn-outline-secondary:active {
+  color: #ffffff !important;
+  border-color: #74c69d !important;
+  background-color: #24583f !important;
+  box-shadow: 0 4px 16px rgba(82, 183, 136, 0.45) !important;
+  transform: translateY(-2px);
+}
+
+[data-bs-theme="dark"] .hero-wellness .btn-outline-secondary,
+[data-bs-theme="dark"] .hero-home2 .btn-outline-secondary {
+  color: #f2f8f4 !important;
+  border-color: rgba(116, 198, 157, 0.6) !important;
+  background-color: rgba(16, 38, 28, 0.88) !important;
+  font-weight: 500;
+  letter-spacing: 0.2px;
 }
 
 /* ==========================================================================
@@ -1278,6 +1307,32 @@ img {
   transform: translateY(-2px);
 }
 
+/* Outline Secondary Pill & Action Buttons */
+.btn-outline-secondary {
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  transition: var(--transition-base);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  color: #ffffff !important;
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(36, 88, 63, 0.25);
+  transform: translateY(-2px);
+}
+
+.hero-wellness .btn-outline-secondary,
+.hero-home2 .btn-outline-secondary {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.95rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
 /* Small Button Variant */
 .btn-clinic-primary.btn-sm,
 .btn-clinic-secondary.btn-sm,
@@ -1519,6 +1574,16 @@ img {
     linear-gradient(135deg, rgba(10, 24, 17, 0.76) 0%, rgba(14, 34, 24, 0.66) 45%, rgba(12, 28, 20, 0.62) 100%),
     url('../images/hero-home2-bg.jpg') center right / cover no-repeat;
   image-rendering: -webkit-optimize-contrast;
+}
+
+.hero-wellness.hero-home2 {
+  padding: 3rem 0 3.5rem 0;
+  scroll-margin-top: 85px;
+}
+
+.hero-home2 .form-card {
+  padding: 1.85rem 1.85rem;
+  scroll-margin-top: 85px;
 }
 
 .hero-pill-badge {
